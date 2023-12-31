@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Home",
+    "href": "/"
+  },
+  {
+    "id": 2,
+    "name": "About us",
+    "href": "/about"
+  },
+  {
+    "id": 3,
+    "name": "IEEE",
+    "href": "/ieee"
+  },
+  {
+    "id": 4,
+    "name": "Sponsors",
+    "href": "/sponsors"
+  },
+  {
+    "id": 5,
+    "name": "Contact",
+    "href": "/contact"
+  }
+]

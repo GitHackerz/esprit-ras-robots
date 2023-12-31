@@ -2,3 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+    @apply bg-primary
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a92323;
+}
+
+
+
+main{
+    @apply bg-background h-full w-full text-white mt-[74px];
+}
+
+header{
+    @apply bg-secondary flex flex-row items-center justify-between py-3 xl:px-14 md:px-8 px-4 w-full fixed z-[99999] top-0;
+}
+header nav{
+    @apply hidden md:flex flex-row items-center xl:gap-14 md:gap-8 gap-4 ;
+}
+header nav a{
+    @apply  text-white relative;
+}
+
+.navbar-mobile{
+    @apply md:hidden w-full  bg-secondary py-5 px-10 flex flex-col gap-10 fixed top-unit-18 z-10;
+}
+.navbar-mobile-items{
+    @apply flex flex-col gap-5;
+}
+.navbar-mobile a{
+    @apply text-white text-lg;
+}
+.navbar-mobile button{
+    @apply bg-primary text-white py-1 px-4 rounded-md;
+}
+
+.line-transition {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transform-origin: bottom left;
+    transition: transform 0.2s ease-in-out, width 0.2s ease-in-out;
+}
+.line{
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    background-color: white;
+    width: 100%;
+}
+.group:hover .line-transition {
+    width: 100%;
+    transform: scaleX(1);
+
+}
+
+footer {
+    @apply bg-secondary flex flex-col items-center justify-center gap-5 py-14 w-full;
+}
+footer p{
+    @apply text-white text-center text-sm;
+}

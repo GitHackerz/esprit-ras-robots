@@ -1,0 +1,15 @@
+.section {
+    @apply w-full justify-center items-center  md:gap-20 gap-14 xl:px-40 lg:px-20 md:px-10 px-5 md:h-[calc(100svh-74px)] py-8
+}
+
+.section-content-left {
+    @apply flex justify-center items-center;
+}
+
+.section-content-right {
+    @apply flex flex-col justify-start items-start gap-8;
+}
+
+.section-content-right button {
+    @apply bg-primary text-white py-6 px-8 rounded-md text-lg font-semibold;
+}

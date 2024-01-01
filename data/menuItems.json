@@ -11,16 +11,11 @@
   },
   {
     "id": 3,
-    "name": "IEEE",
-    "href": "/ieee"
-  },
-  {
-    "id": 4,
     "name": "Sponsors",
     "href": "/sponsors"
   },
   {
-    "id": 5,
+    "id": 4,
     "name": "Contact",
     "href": "/contact"
   }

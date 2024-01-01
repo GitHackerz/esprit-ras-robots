@@ -1,55 +1,22 @@
-.about-section{
-    @apply w-full justify-center items-center grid grid-cols-2 h-screen px-40
-}
-.about-section-left{
-    @apply flex justify-center items-center;
-}
-.about-section-right{
-    @apply flex flex-col justify-start items-start gap-12;
-}
-.about-section-right h1{
-    @apply text-4xl font-semibold;
-}
 
 
 
-
-
-.stats-section {
-    @apply flex flex-col gap-8 items-center justify-center py-14 bg-secondary;
-}
-.stats-section h1{
-    @apply text-6xl font-bold ;
-}
-.stats-section h2{
-    @apply text-4xl font-semibold ;
-}
-.stats-section span{
-    @apply text-primary w-40 border-2 border-primary block ;
-}
-.stats-section p{
-    @apply text-primary text-lg;
-}
-
-.stats-header{
-    @apply text-center  flex flex-col items-center justify-center gap-4;
-}
-.stats-header p{
-    @apply text-light-gray;
-}
-
-.exboard-section{
+.exboard-section {
     @apply flex flex-col items-center justify-center py-14 gap-8
 }
-.exboard-section-header{
+
+.exboard-section-header {
     @apply text-center  flex flex-col items-center justify-center gap-4;
 }
-.exboard-section-header h1{
+
+.exboard-section-header h1 {
     @apply text-4xl font-semibold;
 }
-.exboard-section-header span{
+
+.exboard-section-header span {
     @apply text-primary w-40 border-2 border-primary block ;
 }
-.exboard-section-header p{
+
+.exboard-section-header p {
     @apply text-light-gray;
 }

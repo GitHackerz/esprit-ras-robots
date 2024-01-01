@@ -1,0 +1,13 @@
+.stats-content {
+    @apply inline-flex justify-between flex-wrap items-center w-full;
+}
+.stats-item{
+    @apply flex flex-col items-center
+}
+.stats-item h1{
+    @apply text-6xl font-bold;
+}
+
+.stats-item p{
+    @apply text-primary text-lg;
+}

@@ -74,3 +74,19 @@ footer {
 footer p{
     @apply text-white text-center text-sm;
 }
+
+.card{
+    @apply flex flex-col justify-between items-center gap-4 w-[300px] py-6 px-4 rounded-xl bg-secondary;
+}
+.card h2{
+    @apply text-2xl font-semibold;
+}
+.card h4{
+    @apply text-sm text-primary font-semibold;
+}
+.card p{
+    @apply text-light-gray text-sm text-justify;
+}
+.card a{
+    @apply text-primary text-sm inline-flex items-center gap-2 self-end;
+}

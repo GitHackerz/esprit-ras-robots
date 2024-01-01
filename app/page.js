@@ -6,23 +6,7 @@ import Link from 'next/link'
 import { MdOutlineCarRepair, MdOutlineDirectionsCar } from 'react-icons/md'
 import { FaUserAstronaut } from 'react-icons/fa'
 import { RxExternalLink } from 'react-icons/rx'
-import AllTerrain from '@assets/img/robots/AllTerrain.webp'
-
-const Card = ({ title, description, link }) => {
-    return (
-        <div className="about-challenges-card">
-            <Image src={AllTerrain} height={300} alt={'All Terrain'} />
-            <div className="flex flex-col gap-2">
-                <h2>{title}</h2>
-                <p>{description}</p>
-            </div>
-            <Link href={link} target="_blank" rel="noopener noreferrer">
-                Learn More
-                <RxExternalLink className="h-5 w-5" />
-            </Link>
-        </div>
-    )
-}
+import Card from '@components/Card'
 
 export default function Home() {
     return (

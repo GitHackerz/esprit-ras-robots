@@ -11,7 +11,7 @@
     @apply w-[50%] text-center font-normal text-light-gray;
 }
 .registration-form{
-    @apply flex flex-col items-center justify-center gap-10 bg-secondary w-[60%] my-14 py-10;
+    @apply flex flex-col items-center justify-center gap-10 bg-secondary md:w-[60%] w-[90%] my-14 py-10;
 }
 .registration-form h1{
     @apply text-3xl font-bold text-white;

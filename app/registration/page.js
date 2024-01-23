@@ -66,7 +66,7 @@ const Registration = () => {
                 <h1>Register Your Team</h1>
                 <form
                     action={formAction}
-                    className="flex flex-col gap-8 w-[60%]"
+                    className="flex flex-col gap-8 md:w-[60%] w-[80%]"
                 >
                     <div className="flex flex-col gap-4">
                         <h2>
@@ -89,7 +89,7 @@ const Registration = () => {
                                     state?.errors?.challenge
                                 }
                             />
-                            <div className="flex flex-row gap-4 w-full">
+                            <div className="flex md:flex-row flex-col gap-4 w-full">
                                 <Input
                                     label="Establishment"
                                     name="establishment"
@@ -122,7 +122,7 @@ const Registration = () => {
                                     state.errors['team1.email']
                                 }
                             />
-                            <div className="flex flex-row gap-4">
+                            <div className="flex md:flex-row flex-col gap-4">
                                 <Input
                                     label="Name"
                                     name="team1.name"
@@ -158,7 +158,7 @@ const Registration = () => {
                                     state.errors['team2.email']
                                 }
                             />
-                            <div className="flex flex-row gap-4">
+                            <div className="flex md:flex-row flex-col gap-4">
                                 <Input
                                     label="Name"
                                     name="team2.name"
@@ -194,7 +194,7 @@ const Registration = () => {
                                     state.errors['team3.email']
                                 }
                             />
-                            <div className="flex flex-row gap-4">
+                            <div className="flex md:flex-row flex-col gap-4">
                                 <Input
                                     label="Name"
                                     name="team3.name"

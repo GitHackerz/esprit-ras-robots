@@ -42,10 +42,10 @@ export function NavbarC() {
                 )}
 
                 <Image
-                    src="/assets/img/logo.png"
+                    src="/assets/img/logo.webp"
                     alt={'ERR Logo'}
-                    width={50}
-                    height={50}
+                    width={170}
+                    height={0}
                 />
                 <nav>
                     {menuItems.map(item => {

@@ -1,8 +1,5 @@
 import './style.css'
 import Section from '@components/Section/Section'
-import IEEE from '@assets/img/ieee/IEEE.png'
-import RAS_W from '@assets/img/ieee/RAS_W.png'
-import SB_W from '@assets/img/ieee/SB_W.png'
 
 export default function AboutUs() {
     return (
@@ -10,7 +7,7 @@ export default function AboutUs() {
             <Section
                 title="ESPRIT RAS ROBOTS 2.0"
                 subtitle="What is the event?"
-                image="/assets/img/logo.png"
+                image="/assets/img/logo.webp"
                 stats={[
                     { number: 200, title: 'Participants' },
                     { number: 10, title: 'Speakers' },
@@ -27,7 +24,7 @@ export default function AboutUs() {
             <Section
                 title="IEEE"
                 subtitle="What is IEEE?"
-                image={IEEE}
+                image={'/assets/img/ieee/IEEE.webp'}
                 stats={[
                     { number: 200, title: 'Participants' },
                     { number: 10, title: 'Speakers' },
@@ -43,7 +40,7 @@ export default function AboutUs() {
             <Section
                 title="IEEE ESPRIT Student Branch"
                 subtitle="Who are we?"
-                image={SB_W}
+                image={'/assets/img/ieee/SB_W.webp'}
                 stats={[
                     { number: 200, title: 'Participants' },
                     { number: 10, title: 'Speakers' },
@@ -58,7 +55,7 @@ export default function AboutUs() {
             <Section
                 title="IEEE ESPRIT RAS Student Branch Chapter"
                 subtitle="Who are we?"
-                image={RAS_W}
+                image={'/assets/img/ieee/RAS_W.webp'}
                 stats={[
                     { number: 200, title: 'Participants' },
                     { number: 10, title: 'Speakers' },

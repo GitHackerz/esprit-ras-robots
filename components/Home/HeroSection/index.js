@@ -3,8 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import './style.css'
 import TimeLeft from '@components/Home/HeroSection/TimeLeft'
-import { Suspense } from 'react'
-import Loading from './loading'
 
 const HeroSection = () => (
     <section className="hero-section relative">
@@ -33,7 +31,7 @@ const HeroSection = () => (
         </div>
         <div className="hero-right">
             <Image
-                src="/assets/img/Robot.png"
+                src="/assets/img/Robot.webp"
                 alt="Robot"
                 width={600}
                 height={600}

@@ -57,23 +57,7 @@ export async function createTeam(prevState, formData) {
     }
     const data = {
         ...parsedData.data,
-        teams: [
-            // {
-            //     email: parsedData.data['team1.email'],
-            //     name: parsedData.data['team1.name'],
-            //     phone: parsedData.data['team1.phone']
-            // },
-            // parsedData.data['team2.email'] && {
-            //     email: parsedData.data['team2.email'],
-            //     name: parsedData.data['team2.name'],
-            //     phone: parsedData.data['team2.phone']
-            // },
-            // parsedData.data['team3.email'] && {
-            //     email: parsedData.data['team3.email'],
-            //     name: parsedData.data['team3.name'],
-            //     phone: parsedData.data['team3.phone']
-            // }
-        ]
+        teams: []
     }
 
     if (parsedData.data['team1.email']) {
@@ -105,14 +89,10 @@ export async function createTeam(prevState, formData) {
     }
 
     try {
-        axios
-            .post('http://localhost:3050/api/teams', {
-                ...data,
-                email: data.teams[0].email
-            })
-            .then(res => {
-                console.log(res)
-            })
+        await axios.post('http://192.168.31.9:3050/api/teams', {
+            ...data,
+            email: data.teams[0].email
+        })
     } catch (err) {
         console.log(err)
     }

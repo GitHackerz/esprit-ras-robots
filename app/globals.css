@@ -22,7 +22,7 @@ main{
 }
 
 header{
-    @apply bg-secondary flex flex-row items-center justify-between py-3 xl:px-14 md:px-8 px-4 w-full fixed z-[99999] top-0;
+    @apply bg-secondary flex flex-row items-center justify-between py-3 xl:px-14 md:px-8 px-4 w-full fixed z-[99999] top-0 h-[75px] ;
 }
 header nav{
     @apply hidden md:flex flex-row items-center xl:gap-14 md:gap-8 gap-4 ;

@@ -96,6 +96,9 @@ export async function createTeam(prevState, formData) {
                 email: data.teams[0].email
             }
         )
+        return {
+            success: true
+        }
     } catch (err) {
         console.log(err)
     }

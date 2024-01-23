@@ -89,10 +89,13 @@ export async function createTeam(prevState, formData) {
     }
 
     try {
-        await axios.post('http://192.168.31.9:3050/api/teams', {
-            ...data,
-            email: data.teams[0].email
-        })
+        await axios.post(
+            'https://29a6d9a1-4afd-48be-af26-5e0005c4c721-00-1h9c3xm1ay6m4.janeway.replit.dev/api/teams',
+            {
+                ...data,
+                email: data.teams[0].email
+            }
+        )
     } catch (err) {
         console.log(err)
     }

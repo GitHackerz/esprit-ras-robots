@@ -1,0 +1,33 @@
+.hero-section{
+    @apply xl:grid xl:grid-cols-2 lg:inline-flex items-center justify-center h-[calc(100svh-70px)] md:pt-10 pt-10 w-full;
+    background: linear-gradient(51deg, rgba(20, 20, 20, 0.00) 35.83%, #3F2121 92.08%);
+}
+
+.hero-right{
+    @apply lg:flex hidden flex-col justify-end items-end h-full
+}
+
+.hero-left{
+    @apply flex flex-col md:items-start items-center justify-center gap-10 lg:pl-10 md:pl-5 px-5 h-full ;
+}
+.hero-left button {
+    @apply border-gray border px-8 py-6 text-base
+}
+.hero-left h1{
+    @apply xl:text-5xl sm:text-4xl text-2xl font-semibold flex flex-col gap-2;
+}
+.hero-left h1 span{
+    @apply text-primary uppercase xl:text-6xl sm:text-5xl text-4xl font-bold;
+}
+.hero-left p{
+    @apply text-light-gray xl:text-base lg:text-sm text-xs;
+}
+.hero-left .card{
+    @apply flex flex-col justify-center  md:w-[190px] w-[150px] py-4 px-4 rounded-xl bg-secondary;
+}
+.hero-left .card h2{
+    @apply text-2xl font-semibold text-white;
+}
+.hero-left .card p{
+    @apply text-light-gray;
+}

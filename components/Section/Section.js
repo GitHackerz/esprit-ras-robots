@@ -3,7 +3,6 @@ import Stats from '@components/Stats/Stats'
 import './Section.css'
 
 const Section = ({ title, subtitle, children, image, isInverted, stats }) => {
-    console.log(isInverted)
     return (
         <section
             className={`section flex flex-col ${
@@ -15,6 +14,8 @@ const Section = ({ title, subtitle, children, image, isInverted, stats }) => {
                     src={image}
                     alt={'About Us'}
                     className="md:w-[800px] w-[80%] "
+                    width={800}
+                    height={0}
                 />
             </div>
             <div className="section-content-right">

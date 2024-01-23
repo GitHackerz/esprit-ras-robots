@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import Logo from '@assets/img/Logo.png'
 import Link from 'next/link'
 import { Button } from '@nextui-org/react'
 import { usePathname } from 'next/navigation'
@@ -42,7 +41,12 @@ export function NavbarC() {
                     />
                 )}
 
-                <Image src={Logo} alt={'ERR Logo'} width={50} height={50} />
+                <Image
+                    src="/assets/img/logo.png"
+                    alt={'ERR Logo'}
+                    width={50}
+                    height={50}
+                />
                 <nav>
                     {menuItems.map(item => {
                         return (
@@ -61,10 +65,11 @@ export function NavbarC() {
                         )
                     })}
                 </nav>
-                <Button className="md:block hidden bg-primary text-white py-1 px-4 rounded-md">
-                    {' '}
-                    Register Now{' '}
-                </Button>
+                <Link href={'/registration'}>
+                    <Button className="md:block hidden bg-primary text-white py-1 px-4 rounded-md">
+                        Register Now{' '}
+                    </Button>
+                </Link>
             </header>
             {menuOpen && (
                 <div className={`navbar-mobile ${animationClass}`}>
@@ -81,7 +86,9 @@ export function NavbarC() {
                             )
                         })}
                     </div>
-                    <Button> Register Now </Button>
+                    <Link href={'/registration'}>
+                        <Button> Register Now </Button>
+                    </Link>
                 </div>
             )}
         </>

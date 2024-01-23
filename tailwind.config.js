@@ -27,7 +27,6 @@ module.exports = {
                 primary: '#F73B3B',
                 secondary: '#1A1A1A',
                 background: '#141414',
-                icon: '#FA8585',
                 'light-gray': '#999999',
                 gray: '#262626'
             }

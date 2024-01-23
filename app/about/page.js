@@ -1,4 +1,3 @@
-import Logo from '@assets/img/Logo.png'
 import './style.css'
 import Section from '@components/Section/Section'
 import IEEE from '@assets/img/ieee/IEEE.png'
@@ -11,11 +10,11 @@ export default function AboutUs() {
             <Section
                 title="ESPRIT RAS ROBOTS 2.0"
                 subtitle="What is the event?"
-                image={Logo}
+                image="/assets/img/logo.png"
                 stats={[
                     { number: 200, title: 'Participants' },
                     { number: 10, title: 'Speakers' },
-                    { number: 5, title: 'Sponsors' },
+                    { number: 5, title: 'SponsorsSection' },
                     { number: 5, title: 'Partners' }
                 ]}
             >
@@ -32,7 +31,7 @@ export default function AboutUs() {
                 stats={[
                     { number: 200, title: 'Participants' },
                     { number: 10, title: 'Speakers' },
-                    { number: 5, title: 'Sponsors' },
+                    { number: 5, title: 'SponsorsSection' },
                     { number: 5, title: 'Partners' }
                 ]}
                 isInverted
@@ -48,7 +47,7 @@ export default function AboutUs() {
                 stats={[
                     { number: 200, title: 'Participants' },
                     { number: 10, title: 'Speakers' },
-                    { number: 5, title: 'Sponsors' },
+                    { number: 5, title: 'SponsorsSection' },
                     { number: 5, title: 'Partners' }
                 ]}
             >
@@ -63,7 +62,7 @@ export default function AboutUs() {
                 stats={[
                     { number: 200, title: 'Participants' },
                     { number: 10, title: 'Speakers' },
-                    { number: 5, title: 'Sponsors' },
+                    { number: 5, title: 'SponsorsSection' },
                     { number: 5, title: 'Partners' }
                 ]}
                 isInverted

@@ -145,9 +145,7 @@ const Registration = () => {
                         </div>
                     </div>
                     <div className="flex flex-col gap-4">
-                        <h2>
-                            Team Member (2) Informations <span>(*)</span>
-                        </h2>
+                        <h2>Team Member (2) Informations</h2>
                         <div className="flex flex-col gap-1">
                             <Input
                                 label="Email"
@@ -181,9 +179,7 @@ const Registration = () => {
                         </div>
                     </div>
                     <div className="flex flex-col gap-4">
-                        <h2>
-                            Team Member (3) Informations <span>(*)</span>
-                        </h2>
+                        <h2>Team Member (3) Informations</h2>
                         <div className="flex flex-col gap-1">
                             <Input
                                 label="Email"

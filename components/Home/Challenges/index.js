@@ -16,25 +16,25 @@ const Challenges = () => (
                 title="Line Follower"
                 description="Lorem ipsum dolor sit amet consectetur adipisicing elit Quisquam, voluptas"
                 link="https://www.google.com/"
-                imgPath="/assets/img/challenges/LineFollower.png"
+                imgPath="/assets/img/challenges/LineFollower.webp"
             />
             <Card
                 title="All Terrain"
                 description="Lorem ipsum dolor sit amet consectetur adipisicing elit Quisquam, voluptas"
                 link="https://www.google.com/"
-                imgPath="/assets/img/challenges/AllTerrain.png"
+                imgPath="/assets/img/challenges/AllTerrain.webp"
             />
             <Card
                 title="Junior"
                 description="Lorem ipsum dolor sit amet consectetur adipisicing elit Quisquam, voluptas Lorem ipsum dolor sit amet consectetur adipisicing elit Quisquam, voluptas"
                 link="https://www.google.com/"
-                imgPath="/assets/img/challenges/Junior.png"
+                imgPath="/assets/img/challenges/Junior.webp"
             />
             <Card
                 title="Fighter"
                 description="Lorem ipsum dolor sit amet consectetur adipisicing elit Quisquam, voluptas"
                 link="https://www.google.com/"
-                imgPath="/assets/img/challenges/Fighter.png"
+                imgPath="/assets/img/challenges/Fighter.webp"
             />
         </div>
     </section>

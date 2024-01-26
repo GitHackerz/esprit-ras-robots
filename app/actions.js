@@ -2,6 +2,13 @@
 
 import { z } from 'zod'
 import axios from 'axios'
+import dotenv from 'dotenv'
+import { revalidatePath } from 'next/cache'
+
+dotenv.config()
+
+console.log(process.env.SERVER_URL)
+
 const optionalTextInput = schema =>
     z
         .union([z.string(), z.undefined()])
@@ -21,6 +28,20 @@ const schema = z.object({
     'team3.email': optionalTextInput(z.string().email('Invalid email address')),
     'team3.name': z.string().optional(),
     'team3.phone': z.string().optional()
+})
+
+const resetForm = formData => {
+    for (const pair of formData.entries()) {
+        formData.delete(pair[0])
+    }
+}
+
+const contactSchema = z.object({
+    name: z.string().min(1, 'Name is required'),
+    phone: z.string().min(1, 'Phone is required'),
+    email: z.string().email('Invalid email address'),
+    subject: z.string().min(1, 'Subject is required'),
+    message: z.string().min(1, 'Message is required')
 })
 
 export async function createTeam(prevState, formData) {
@@ -89,13 +110,58 @@ export async function createTeam(prevState, formData) {
     }
 
     try {
-        await axios.post(
-            'https://29a6d9a1-4afd-48be-af26-5e0005c4c721-00-1h9c3xm1ay6m4.janeway.replit.dev/api/teams',
-            {
-                ...data,
-                email: data.teams[0].email
+        await axios.post(`${process.env.SERVER_URL}/api/teams`, {
+            ...data,
+            email: data.teams[0].email
+        })
+        resetForm(formData)
+
+        return {
+            message: 'Team created successfully',
+            success: true
+        }
+    } catch (err) {
+        console.log(err)
+        return {
+            success: false,
+            error: "Couldn't create team"
+        }
+    }
+}
+
+export async function sendMail(prevState, formData) {
+    const parsedData = contactSchema.safeParse({
+        name: formData.get('name'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+        phone: formData.get('phone')
+    })
+
+    if (!parsedData.success) {
+        const fieldErrors = parsedData.error.flatten().fieldErrors
+
+        const teamErrors = {}
+        for (const fieldName in fieldErrors) {
+            if (fieldErrors[fieldName].length > 1) {
+                teamErrors[fieldName] = fieldErrors[fieldName]
+            } else {
+                teamErrors[fieldName] = fieldErrors[fieldName][0]
             }
-        )
+        }
+
+        return {
+            errors: teamErrors
+        }
+    }
+
+    const data = parsedData.data
+
+    try {
+        await axios.post(`${process.env.SERVER_URL}/api/users/contact`, {
+            ...data
+        })
+        resetForm(formData)
         return {
             success: true
         }

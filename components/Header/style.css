@@ -1,0 +1,14 @@
+.header {
+    @apply flex flex-col items-center justify-center h-[50svh] w-full gap-5 bg-center;
+
+    background: linear-gradient(0deg, rgba(20, 20, 20, 0.80) 0%, rgba(20, 20, 20, 0.80) 100%), url('/assets/img/bg.webp') lightgray 50% / cover no-repeat;
+}
+
+
+.header h1 {
+    @apply text-6xl font-bold text-white;
+}
+
+.header p {
+    @apply w-[50%] text-center font-normal text-light-gray;
+}

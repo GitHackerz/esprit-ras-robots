@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from 'react'
 import Loading from './loading'
+import { calculateTimeLeftOnServer } from '@/lib/utils'
 
 const TimeCard = ({ time, unit }) => (
-    <div className="md:w-[150px] md:h-[150px] w-[100px] h-[100px] max-h-[150px] flex flex-col bg-secondary">
-        <div className="text-white md:text-4xl text-2xl font-bold h-24 flex items-center justify-center">
+    <div className="flex flex-col ">
+        <div className="text-white md:text-6xl text-2xl font-bold h-24 flex items-center justify-center">
             {time}
         </div>
-        <div className="text-secondary md:text-2xl text-xl font-medium bg-white flex-grow flex items-center justify-center">
+        <div className="text-white md:text-3xl text-xl flex-grow flex items-center justify-center">
             {unit}
         </div>
     </div>
@@ -16,31 +17,17 @@ const TimeCard = ({ time, unit }) => (
 
 const TimeLeft = () => {
     const [loading, setLoading] = useState(true)
-    const [days, setDays] = useState(0)
-    const [hours, setHours] = useState(0)
-    const [minutes, setMinutes] = useState(0)
-    const [seconds, setSeconds] = useState(0)
+    const [timeLeft, setTimeLeft] = useState({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+    })
 
     useEffect(() => {
-        function getTimeLeft() {
-            //competiton date is 2024-02-25 9 AM
-            const competitionDate = new Date('2024-02-25T09:00:00')
-            const currentDate = new Date()
-            const timeLeft = competitionDate - currentDate
-
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
-            const hours = Math.floor(
-                (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-            )
-            const minutes = Math.floor(
-                (timeLeft % (1000 * 60 * 60)) / (1000 * 60)
-            )
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
-
-            setDays(days)
-            setHours(hours)
-            setMinutes(minutes)
-            setSeconds(seconds)
+        const getTimeLeft = async () => {
+            const timeLeft = calculateTimeLeftOnServer()
+            setTimeLeft(timeLeft)
             setLoading(false)
         }
 
@@ -54,11 +41,11 @@ const TimeLeft = () => {
     if (loading) return <Loading />
 
     return (
-        <div className="flex flex-row flex-wrap items-center gap-5">
-            <TimeCard time={days} unit="Days" />
-            <TimeCard time={hours} unit="Hours" />
-            <TimeCard time={minutes} unit="Minutes" />
-            <TimeCard time={seconds} unit="Seconds" />
+        <div className="flex flex-row flex-wrap items-center gap-20">
+            <TimeCard time={timeLeft.days} unit="Days" />
+            <TimeCard time={timeLeft.hours} unit="Hours" />
+            <TimeCard time={timeLeft.minutes} unit="Minutes" />
+            <TimeCard time={timeLeft.seconds} unit="Seconds" />
         </div>
     )
 }

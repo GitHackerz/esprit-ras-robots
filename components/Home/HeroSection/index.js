@@ -3,10 +3,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import './style.css'
 import TimeLeft from '@components/Home/HeroSection/TimeLeft'
+import { calculateTimeLeftOnServer } from '@/lib/utils'
 
-const HeroSection = () => (
-    <section className="hero-section relative">
-        <div className="hero-left">
+const HeroSection = () => {
+    return (
+        <section className="hero-section">
             <div className="flex flex-col gap-5">
                 <h1>
                     Discover Your Competition
@@ -28,17 +29,8 @@ const HeroSection = () => (
                 </Button>
             </div>
             <TimeLeft />
-        </div>
-        <div className="hero-right">
-            <Image
-                src="/assets/img/Robot.webp"
-                alt="Robot"
-                width={600}
-                height={600}
-                className="object-cover"
-            />
-        </div>
-    </section>
-)
+        </section>
+    )
+}
 
 export default HeroSection

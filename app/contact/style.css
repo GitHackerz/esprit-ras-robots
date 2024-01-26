@@ -1,0 +1,9 @@
+.contact-form{
+    @apply flex flex-col gap-10 items-center justify-center py-14 rounded-lg my-10 px-20 bg-secondary
+}
+.contact-form h1{
+    @apply text-4xl font-bold text-white
+}
+.contact-map{
+    @apply flex-1 flex items-center justify-center py-20
+}

@@ -1,15 +1,7 @@
 .container-registration{
     @apply  w-full flex flex-col items-center justify-center ;
 }
-.container-registration .header{
-    @apply flex flex-col items-center justify-center h-[50svh] w-full gap-5  bg-gradient-to-tr from-neutral-900 to-stone-800;
-}
-.container-registration .header h1{
-    @apply text-5xl font-bold text-white;
-}
-.container-registration .header p{
-    @apply w-[50%] text-center font-normal text-light-gray;
-}
+
 .registration-form{
     @apply flex flex-col items-center justify-center gap-10 bg-secondary md:w-[60%] w-[90%] my-14 py-10;
 }

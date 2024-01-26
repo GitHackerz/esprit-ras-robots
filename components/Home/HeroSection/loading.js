@@ -1,18 +1,18 @@
 import { Spinner } from '@nextui-org/react'
 
 const TimeCard = ({ time, unit }) => (
-    <div className="md:w-[150px] md:h-[150px] w-[100px] h-[100px] max-h-[150px] flex flex-col bg-secondary">
-        <div className="text-white md:text-4xl text-2xl font-bold h-24 flex items-center justify-center">
+    <div className="flex flex-col">
+        <div className="text-white md:text-6xl text-2xl font-bold h-24 flex items-center justify-center">
             <Spinner color="white" />
         </div>
-        <div className="text-secondary md:text-2xl text-xl font-medium bg-white flex-grow flex items-center justify-center">
+        <div className="text-white md:text-3xl text-xl flex-grow flex items-center justify-center">
             {unit}
         </div>
     </div>
 )
 const Loading = () => {
     return (
-        <div className="flex flex-row flex-wrap items-center gap-5">
+        <div className="flex flex-row flex-wrap items-center gap-20 ">
             <TimeCard unit="Days" />
             <TimeCard unit="Hours" />
             <TimeCard unit="Minutes" />

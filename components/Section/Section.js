@@ -26,7 +26,7 @@ const Section = ({ title, subtitle, children, image, isInverted, stats }) => {
                     <h1 className="md:text-5xl text-3xl font-bold">{title}</h1>
                 </div>
                 <p className="text-light-gray">{children}</p>
-                <Stats stats={stats} />
+                {stats && <Stats stats={stats} />}
             </div>
         </section>
     )

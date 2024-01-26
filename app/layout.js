@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body className={urbanist.className}>
                 <NavbarC />
-                {children}
+                <div className="min-h-screen bg-background">{children}</div>
                 <Footer />
             </body>
         </html>

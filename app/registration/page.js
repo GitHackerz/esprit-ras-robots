@@ -1,8 +1,13 @@
 'use client'
+
 import './style.css'
 import { createTeam } from '@/app/actions'
-import { useFormState } from 'react-dom'
+import { useFormState, useFormStatus } from 'react-dom'
+import Header from '@components/Header'
+import Input from '@components/Input'
 import { Button } from '@nextui-org/react'
+import Alert from '@components/Alert'
+import { useEffect, useRef, useState } from 'react'
 
 const initialState = {
     name: '',
@@ -26,45 +31,51 @@ const initialState = {
     }
 }
 
-const Input = ({ label, name, error, isSelectMenu }) => (
-    <div className="flex flex-col w-full">
-        <label className="text-white font-normal">{label}</label>
-        {isSelectMenu ? (
-            <select className="bg-gray rounded-lg px-4 py-3" name={name}>
-                <option value="">Select a Challenge</option>
-                <option value="Junior">Junior</option>
-                <option value="Line Follower">Line Follower</option>
-                <option value="All Terrain">All Terrain</option>
-                <option value="Fighter">Fighter</option>
-            </select>
-        ) : (
-            <input
-                className="bg-gray rounded-lg px-4 py-2"
-                placeholder={label}
-                name={name}
-            />
-        )}
+export function SubmitButton({ formAction }) {
+    const { pending } = useFormStatus()
 
-        {error && <span className="text-red-500 text-xs">{error}</span>}
-    </div>
-)
+    return (
+        <Button
+            isLoading={pending}
+            className="bg-primary text-white w-[40%] self-center "
+            type="submit"
+        >
+            Add
+        </Button>
+    )
+}
 
 const Registration = () => {
     const [state, formAction] = useFormState(createTeam, initialState)
+    const [isError, setIsError] = useState(false)
+    const [isSuccess, setIsSuccess] = useState(false)
+
+    const formRef = useRef(null)
+
+    const resetForm = () => {
+        formRef.current.setAttribute('action', '') // Reset action
+        formRef.current.reset() // Reset input values
+    }
+
+    useEffect(() => {
+        if (formRef.current && state.success) {
+            setIsError(false)
+            setIsSuccess(true)
+            resetForm()
+        } else if (formRef.current && state.errors) {
+            setIsSuccess(false)
+            setIsError(true)
+        }
+    }, [state])
+
     return (
         <main className="container-registration">
-            <section className="header">
-                <h1>Registration</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                    elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
-                    leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                    mattis.
-                </p>
-            </section>
+            <Header title="Registration" />
+
             <section className="registration-form">
                 <h1>Register Your Team</h1>
                 <form
+                    ref={formRef}
                     action={formAction}
                     className="flex flex-col gap-8 md:w-[60%] w-[80%]"
                 >
@@ -89,7 +100,7 @@ const Registration = () => {
                                     state?.errors?.challenge
                                 }
                             />
-                            <div className="flex md:flex-row flex-col gap-4 w-full">
+                            <div className="flex xl:flex-row flex-col  gap-4 w-full">
                                 <Input
                                     label="Establishment"
                                     name="establishment"
@@ -212,13 +223,27 @@ const Registration = () => {
                             </div>
                         </div>
                     </div>
-                    <Button
-                        type="submit"
-                        className="bg-primary text-white w-[40%] self-center"
-                    >
-                        Register
-                    </Button>
+                    <SubmitButton />
                 </form>
+
+                {isSuccess && (
+                    <Alert
+                        message="Your team has been registered successfully!"
+                        type="success"
+                        reset={() => {
+                            setIsSuccess(false)
+                        }}
+                    />
+                )}
+                {isError && (
+                    <Alert
+                        message="Please verify the informations!"
+                        type="error"
+                        reset={() => {
+                            setIsError(false)
+                        }}
+                    />
+                )}
             </section>
         </main>
     )

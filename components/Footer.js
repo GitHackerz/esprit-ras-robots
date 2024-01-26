@@ -1,13 +1,7 @@
 import Image from 'next/image'
 import { AiOutlinePhone } from 'react-icons/ai'
 import { IoMailOutline } from 'react-icons/io5'
-import {
-    FaFacebook,
-    FaInstagram,
-    FaLinkedin,
-    FaMailchimp,
-    FaYoutube
-} from 'react-icons/fa'
+import { FaFacebook, FaInstagram } from 'react-icons/fa'
 import Link from 'next/link'
 
 export function Footer() {

@@ -1,9 +1,7 @@
 import { Button } from '@nextui-org/react'
 import Link from 'next/link'
-import Image from 'next/image'
 import './style.css'
 import TimeLeft from '@components/Home/HeroSection/TimeLeft'
-import { calculateTimeLeftOnServer } from '@/lib/utils'
 
 const HeroSection = () => {
     return (

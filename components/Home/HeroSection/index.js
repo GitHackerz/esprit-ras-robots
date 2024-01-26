@@ -18,13 +18,13 @@ const HeroSection = () => {
                 </p>
             </div>
             <div className="inline-flex items-center gap-4">
-                <Button color="secondary">
-                    <Link href={'/about'}>Learn More</Link>
-                </Button>
+                <Link href={'/about'}>
+                    <Button color="secondary">Learn More</Button>
+                </Link>
 
-                <Button color="primary">
-                    <Link href={'/contact'}>Contact Us </Link>
-                </Button>
+                <Link href={'/contact'}>
+                    <Button color="primary">Contact Us</Button>
+                </Link>
             </div>
             <TimeLeft />
         </section>

@@ -8,7 +8,7 @@ export function Footer() {
     return (
         <footer>
             <Image
-                src="/assets/img/logo2.webp"
+                src="/assets/logo2.webp"
                 alt={'Logo'}
                 width={150}
                 height={150}

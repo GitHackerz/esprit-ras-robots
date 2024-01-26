@@ -42,7 +42,7 @@ export function NavbarC() {
                 )}
 
                 <Image
-                    src="/assets/img/logo.webp"
+                    src="/assets/logo.webp"
                     alt={'ERR Logo'}
                     width={170}
                     height={0}

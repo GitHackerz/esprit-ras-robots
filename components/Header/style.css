@@ -1,7 +1,7 @@
 .header {
     @apply flex flex-col items-center justify-center h-[50svh] w-full gap-5 bg-center;
 
-    background: linear-gradient(0deg, rgba(20, 20, 20, 0.80) 0%, rgba(20, 20, 20, 0.80) 100%), url('/assets/img/bg.webp') lightgray 50% / cover no-repeat;
+    background: linear-gradient(0deg, rgba(20, 20, 20, 0.80) 0%, rgba(20, 20, 20, 0.80) 100%), url('/assets/bg.webp') lightgray 50% / cover no-repeat;
 }
 
 

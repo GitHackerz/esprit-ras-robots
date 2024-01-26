@@ -14,7 +14,7 @@ const Section = ({ title, subtitle, children, image, isInverted, stats }) => {
                     src={image}
                     alt={'About Us'}
                     className="md:w-[800px] w-[80%] "
-                    width={800}
+                    width={500}
                     height={0}
                 />
             </div>

@@ -29,7 +29,7 @@ const SponsorsSection = () => {
                 >
                     <SwiperSlide>
                         <Image
-                            src="/assets/img/ieee/SB_W.webp"
+                            src="/assets/ieee/SB_W.webp"
                             alt="SB"
                             width={200}
                             height={0}
@@ -37,7 +37,7 @@ const SponsorsSection = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <Image
-                            src="/assets/img/ieee/RAS_W.webp"
+                            src="/assets/ieee/RAS_W.webp"
                             alt="SB"
                             width={200}
                             height={0}
@@ -45,7 +45,7 @@ const SponsorsSection = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <Image
-                            src="/assets/img/ieee/SB_W.webp"
+                            src="/assets/ieee/SB_W.webp"
                             alt="SB"
                             width={200}
                             height={0}
@@ -53,7 +53,7 @@ const SponsorsSection = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <Image
-                            src="/assets/img/ieee/RAS_W.webp"
+                            src="/assets/ieee/RAS_W.webp"
                             alt="SB"
                             width={200}
                             height={0}
@@ -61,7 +61,7 @@ const SponsorsSection = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <Image
-                            src="/assets/img/ieee/SB_W.webp"
+                            src="/assets/ieee/SB_W.webp"
                             alt="SB"
                             width={200}
                             height={0}
@@ -69,7 +69,7 @@ const SponsorsSection = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <Image
-                            src="/assets/img/ieee/RAS_W.webp"
+                            src="/assets/ieee/RAS_W.webp"
                             alt="SB"
                             width={200}
                             height={0}
@@ -77,7 +77,7 @@ const SponsorsSection = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <Image
-                            src="/assets/img/ieee/SB_W.webp"
+                            src="/assets/ieee/SB_W.webp"
                             alt="SB"
                             width={200}
                             height={0}
@@ -85,7 +85,7 @@ const SponsorsSection = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <Image
-                            src="/assets/img/ieee/RAS_W.webp"
+                            src="/assets/ieee/RAS_W.webp"
                             alt="SB"
                             width={200}
                             height={0}

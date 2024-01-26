@@ -9,7 +9,7 @@ export default function AboutUs() {
             <Section
                 title="ESPRIT RAS ROBOTS 2.0"
                 subtitle="What is the event?"
-                image="/assets/img/logo.webp"
+                image="/assets/logo_white.webp"
             >
                 ESPRIT RAS ROBOTS 2.0 is a national robotics competition
                 organized by the ESPRIT Robotics Club, which aims to bring
@@ -20,7 +20,7 @@ export default function AboutUs() {
             <Section
                 title="IEEE"
                 subtitle="What is IEEE?"
-                image={'/assets/img/ieee/IEEE.webp'}
+                image={'/assets/ieee/IEEE.webp'}
                 stats={[
                     { number: 300, title: 'Conferences' },
                     { number: 2806, title: 'Student Branches' },
@@ -36,7 +36,7 @@ export default function AboutUs() {
             <Section
                 title="IEEE ESPRIT Student Branch"
                 subtitle="Who are we?"
-                image={'/assets/img/ieee/SB_W.webp'}
+                image={'/assets/ieee/SB_W.webp'}
                 stats={[
                     { number: 900, title: 'Members' },
                     { number: 19, title: 'Awards' },
@@ -51,7 +51,7 @@ export default function AboutUs() {
             <Section
                 title="IEEE ESPRIT RAS Student Branch Chapter"
                 subtitle="Who are we?"
-                image={'/assets/img/ieee/RAS_W.webp'}
+                image={'/assets/ieee/RAS_W.webp'}
                 stats={[
                     { number: 2018, title: 'Foundation' },
                     { number: 200, title: 'Members' },

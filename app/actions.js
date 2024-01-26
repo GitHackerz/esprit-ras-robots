@@ -3,7 +3,6 @@
 import { z } from 'zod'
 import axios from 'axios'
 import dotenv from 'dotenv'
-import { revalidatePath } from 'next/cache'
 
 dotenv.config()
 

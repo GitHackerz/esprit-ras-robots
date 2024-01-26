@@ -1,6 +1,6 @@
 import { Spinner } from '@nextui-org/react'
 
-const TimeCard = ({ time, unit }) => (
+const TimeCard = ({ unit }) => (
     <div className="flex flex-col">
         <div className="text-white md:text-6xl text-2xl font-bold h-24 flex items-center justify-center">
             <Spinner color="white" />

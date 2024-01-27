@@ -40,13 +40,14 @@ export function NavbarC() {
                         onClick={toggleMenu}
                     />
                 )}
-
-                <Image
-                    src="/assets/logo.webp"
-                    alt={'ERR Logo'}
-                    width={170}
-                    height={0}
-                />
+                <Link href={'/'}>
+                    <Image
+                        src="/assets/logo.webp"
+                        alt={'ERR Logo'}
+                        width={170}
+                        height={0}
+                    />
+                </Link>
                 <nav>
                     {menuItems.map(item => {
                         return (

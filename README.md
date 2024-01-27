@@ -30,7 +30,7 @@ npm run dev
 │   ├── style.css (style file for the page.js)
 │   ├── about 
 │   ├── contact
-│   ├── sponsors (Every Folder is a route in the website)
+│   ├── sponsors-partners (Every Folder is a route in the website)
 ├── public : (Static files)
 ├── data : (Data used in pages)
 ├── .gitignore : (Git ignore file)

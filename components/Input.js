@@ -5,7 +5,7 @@ const Input = ({ label, name, error, isSelectMenu, isTextArea }) => (
             <select className="bg-gray rounded-lg px-4 py-3" name={name}>
                 <option value="">Select a Challenge</option>
                 <option value="Junior">Junior</option>
-                <option value="Line Follower">Line Follower</option>
+                <option value="Autonomous">Autonomous</option>
                 <option value="All Terrain">All Terrain</option>
                 <option value="Fighter">Fighter</option>
             </select>

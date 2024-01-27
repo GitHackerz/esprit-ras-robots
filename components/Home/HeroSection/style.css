@@ -11,10 +11,10 @@
     @apply xl:text-5xl sm:text-4xl text-2xl font-semibold flex flex-col gap-2 items-center;
 }
 .hero-section h1 span{
-    @apply text-primary uppercase xl:text-6xl sm:text-5xl text-4xl font-bold;
+    @apply text-primary uppercase xl:text-6xl sm:text-5xl text-4xl font-bold text-center;
 }
 .hero-section p{
-    @apply text-light-gray xl:text-base lg:text-sm text-xs;
+    @apply text-light-gray xl:text-base lg:text-sm text-xs md:text-left text-center;
 }
 .hero-section .card{
     @apply flex flex-col justify-center  md:w-[190px] w-[150px] py-4 px-4 rounded-xl bg-secondary;

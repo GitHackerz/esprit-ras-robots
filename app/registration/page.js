@@ -5,9 +5,11 @@ import { createTeam } from '@/app/actions'
 import { useFormState, useFormStatus } from 'react-dom'
 import Header from '@components/Header'
 import Input from '@components/Input'
-import { Button } from '@nextui-org/react'
+import { Button, useDisclosure } from '@nextui-org/react'
 import Alert from '@components/Alert'
 import { useEffect, useRef, useState } from 'react'
+import ConfirmModal from '@components/ConfirmModal'
+import axios from 'axios'
 
 const initialState = {
     name: '',
@@ -33,12 +35,11 @@ const initialState = {
 
 export function SubmitButton() {
     const { pending } = useFormStatus()
-
     return (
         <Button
             isLoading={pending}
             className="bg-primary text-white w-[40%] self-center "
-            type="submit"
+            type={'submit'}
         >
             Add
         </Button>
@@ -49,24 +50,51 @@ const Registration = () => {
     const [state, formAction] = useFormState(createTeam, initialState)
     const [isError, setIsError] = useState(false)
     const [isSuccess, setIsSuccess] = useState(false)
+    const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
 
     const formRef = useRef(null)
 
     const resetForm = () => {
-        formRef.current.setAttribute('action', '') // Reset action
-        formRef.current.reset() // Reset input values
+        formRef.current.setAttribute('action', '')
+        formRef.current.reset()
     }
 
     useEffect(() => {
-        if (formRef.current && state.success) {
-            setIsError(false)
-            setIsSuccess(true)
-            resetForm()
-        } else if (formRef.current && state.errors) {
+        if (formRef.current && state.errors) {
+            setIsSuccess(false)
+            setIsError(true)
+        } else if (formRef.current && state.error) {
             setIsSuccess(false)
             setIsError(true)
         }
     }, [state])
+
+    useEffect(() => {
+        if (state.success) {
+            onOpen()
+        }
+    }, [onOpen, state])
+
+    const handleConfirm = async data => {
+        try {
+            await axios.post(
+                `${process.env.NEXT_PUBLIC_SERVER_URL}/api/teams`,
+                {
+                    ...data,
+                    email: data.teams[0].email
+                }
+            )
+            resetForm()
+            setIsError(false)
+            setIsSuccess(true)
+            onClose()
+        } catch (err) {
+            console.log(err)
+            setIsSuccess(false)
+            setIsError(true)
+            onClose()
+        }
+    }
 
     return (
         <main className="container-registration">
@@ -225,7 +253,12 @@ const Registration = () => {
                     </div>
                     <SubmitButton />
                 </form>
-
+                <ConfirmModal
+                    team={state.data}
+                    onConfirm={() => handleConfirm(state.data)}
+                    onOpenChange={onOpenChange}
+                    isOpen={isOpen}
+                />
                 {isSuccess && (
                     <Alert
                         message="Your team has been registered successfully!"
@@ -237,7 +270,11 @@ const Registration = () => {
                 )}
                 {isError && (
                     <Alert
-                        message="Please verify the informations!"
+                        message={
+                            state.errors
+                                ? 'Please verify the informations!'
+                                : 'An error has occured!'
+                        }
                         type="error"
                         reset={() => {
                             setIsError(false)

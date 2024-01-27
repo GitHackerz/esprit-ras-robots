@@ -6,8 +6,6 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-console.log(process.env.SERVER_URL)
-
 const optionalTextInput = schema =>
     z
         .union([z.string(), z.undefined()])
@@ -28,12 +26,6 @@ const schema = z.object({
     'team3.name': z.string().optional(),
     'team3.phone': z.string().optional()
 })
-
-const resetForm = formData => {
-    for (const pair of formData.entries()) {
-        formData.delete(pair[0])
-    }
-}
 
 const contactSchema = z.object({
     name: z.string().min(1, 'Name is required'),
@@ -108,23 +100,9 @@ export async function createTeam(prevState, formData) {
         delete data[`team${i}.phone`]
     }
 
-    try {
-        await axios.post(`${process.env.SERVER_URL}/api/teams`, {
-            ...data,
-            email: data.teams[0].email
-        })
-        resetForm(formData)
-
-        return {
-            message: 'Team created successfully',
-            success: true
-        }
-    } catch (err) {
-        console.log(err)
-        return {
-            success: false,
-            error: "Couldn't create team"
-        }
+    return {
+        success: true,
+        data
     }
 }
 
@@ -160,7 +138,6 @@ export async function sendMail(prevState, formData) {
         await axios.post(`${process.env.SERVER_URL}/api/users/contact`, {
             ...data
         })
-        resetForm(formData)
         return {
             success: true
         }

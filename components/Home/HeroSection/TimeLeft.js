@@ -6,7 +6,7 @@ import { calculateTimeLeftOnServer } from '@/lib/utils'
 
 const TimeCard = ({ time, unit }) => (
     <div className="flex flex-col ">
-        <div className="text-white md:text-6xl text-2xl font-bold h-24 flex items-center justify-center">
+        <div className="text-white md:text-6xl text-4xl font-bold h-24 flex items-center justify-center">
             {time}
         </div>
         <div className="text-white md:text-3xl text-xl flex-grow flex items-center justify-center">
@@ -41,7 +41,7 @@ const TimeLeft = () => {
     if (loading) return <Loading />
 
     return (
-        <div className="flex flex-row flex-wrap items-center gap-20">
+        <div className="flex flex-row flex-wrap items-center md:gap-20 gap-10">
             <TimeCard time={timeLeft.days} unit="Days" />
             <TimeCard time={timeLeft.hours} unit="Hours" />
             <TimeCard time={timeLeft.minutes} unit="Minutes" />

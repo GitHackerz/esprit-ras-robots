@@ -7,12 +7,12 @@ import Link from 'next/link'
 
 export default function Sponsors() {
     const Card = ({ title, description, image, link }) => (
-        <div className="flex flex-col border-3 border-gray rounded-lg pb-6 px-4 bg-secondary hover:scale-105 duration-300">
+        <div className="flex flex-col border-3 border-gray rounded-lg pb-6 px-4 bg-secondary hover:scale-105 duration-300 w-[300px]">
             <div className="flex flex-col items-center justify-center py-14">
                 <Image
                     className="justify-self-center"
                     src={image}
-                    alt={'ESPRIT'}
+                    alt={title}
                     width={300}
                     height={100}
                 />
@@ -26,7 +26,7 @@ export default function Sponsors() {
                         {description}
                     </p>
                 </div>
-                <Link href={link} className="self-end">
+                <Link target={'_blank'} href={link} className="self-end">
                     <Button className="bg-primary text-white rounded-lg px-4 py-2">
                         <ExternalLink size={18} className="mr-2" />
                         View Website
@@ -38,12 +38,12 @@ export default function Sponsors() {
 
     return (
         <main className="">
-            <Header title="Sponsors" />
-            <div className="px-32">
+            <Header title="Sponsors & Partners" />
+            <div className="xl:px-20 md:px-10 px-5 ">
                 {partners.length > 0 && (
                     <section className="py-20 flex flex-col gap-10">
                         <h1 className="text-4xl font-bold">Our Partners</h1>
-                        <div className="grid grid-cols-4 gap-10 items-stretch">
+                        <div className="flex flex-row flex-wrap gap-y-10 gap-x-5 md:justify-start justify-center items-stretch">
                             {partners.map((partner, index) => (
                                 <Card
                                     key={index}
@@ -60,7 +60,7 @@ export default function Sponsors() {
                 {sponsors.length > 0 && (
                     <section className="py-20 flex flex-col gap-10">
                         <h1 className="text-4xl font-bold">Our Sponsors</h1>
-                        <div className="grid grid-cols-4 gap-10">
+                        <div className="flex flex-row flex-wrap gap-y-10 md:gap-x-0 gap-x-5 md:justify-between justify-center items-stretch">
                             {sponsors.map((sponsor, index) => (
                                 <Card
                                     key={index}

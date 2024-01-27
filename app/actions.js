@@ -41,13 +41,13 @@ export async function createTeam(prevState, formData) {
         challenge: formData.get('challenge'),
         establishment: formData.get('establishment'),
         club: formData.get('club'),
-        'team1.email': formData.get('team1.email'),
+        'team1.email': formData.get('team1.email').trim(),
         'team1.name': formData.get('team1.name'),
         'team1.phone': formData.get('team1.phone'),
-        'team2.email': formData.get('team2.email'),
+        'team2.email': formData.get('team2.email').trim(),
         'team2.name': formData.get('team2.name'),
         'team2.phone': formData.get('team2.phone'),
-        'team3.email': formData.get('team3.email'),
+        'team3.email': formData.get('team3.email').trim(),
         'team3.name': formData.get('team3.name'),
         'team3.phone': formData.get('team3.phone')
     })

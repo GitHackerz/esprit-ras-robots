@@ -70,7 +70,7 @@ export default function ConfirmModal({
                                 <h2 className="text-xl font-bold">
                                     Team Members Information
                                 </h2>
-                                <div className="flex flex-row justify-between">
+                                <div className="flex md:flex-row flex-wrap justify-between">
                                     {team.teams.map((team, index) => {
                                         return (
                                             <div

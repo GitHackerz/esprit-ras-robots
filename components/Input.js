@@ -7,7 +7,7 @@ const Input = ({ label, name, error, isSelectMenu, isTextArea }) => (
                 <option value="Junior">Junior</option>
                 <option value="Autonomous">Autonomous</option>
                 <option value="All Terrain">All Terrain</option>
-                <option value="Fighter">Fighter</option>
+                {/*<option value="Fighter">Fighter</option>*/}
             </select>
         ) : isTextArea ? (
             <textarea

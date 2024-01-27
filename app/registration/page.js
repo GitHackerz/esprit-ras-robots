@@ -50,6 +50,7 @@ const Registration = () => {
     const [state, formAction] = useFormState(createTeam, initialState)
     const [isError, setIsError] = useState(false)
     const [isSuccess, setIsSuccess] = useState(false)
+    const [error, setError] = useState(null)
     const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
 
     const formRef = useRef(null)
@@ -89,7 +90,8 @@ const Registration = () => {
             setIsSuccess(true)
             onClose()
         } catch (err) {
-            console.log(err)
+            console.log(err.response.data.error)
+            setError(err?.response?.data?.error)
             setIsSuccess(false)
             setIsError(true)
             onClose()
@@ -273,7 +275,7 @@ const Registration = () => {
                         message={
                             state.errors
                                 ? 'Please verify the informations!'
-                                : 'An error has occured!'
+                                : error
                         }
                         type="error"
                         reset={() => {

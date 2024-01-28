@@ -32,7 +32,8 @@ header nav a{
 }
 
 .navbar-mobile{
-    @apply md:hidden w-full  bg-secondary py-5 px-10 flex flex-col gap-10 fixed top-unit-18 z-10;
+    @apply md:hidden w-full  bg-secondary py-5 px-10 flex flex-col gap-10 fixed top-unit-18 ;
+    z-index: 99998;
 }
 .navbar-mobile-items{
     @apply flex flex-col gap-5;

@@ -41,7 +41,7 @@ const TimeLeft = () => {
     if (loading) return <Loading />
 
     return (
-        <div className="flex flex-row flex-wrap items-center md:gap-20 gap-10 z-50">
+        <div className="flex flex-row flex-wrap items-center md:gap-20 gap-0 md:justify-center justify-around w-full z-50">
             <TimeCard time={timeLeft.days} unit="Days" />
             <TimeCard time={timeLeft.hours} unit="Hours" />
             <TimeCard time={timeLeft.minutes} unit="Minutes" />

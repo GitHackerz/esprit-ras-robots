@@ -12,9 +12,12 @@ const HeroSection = () => {
                     <span>ESPRIT RAS Robots 2.0</span>
                 </h1>
                 <p>
-                    Your journey to finding the perfect property begins here.
-                    Explore our listings to find the home that matches your
-                    dreams.
+                    Your race to discovering the ultimate robotics challenge
+                    starts now.Enter the fast lane and navigate through our
+                    challenges to unveil the bot that aligns with your coding
+                    dreams. Rev up your skills, explore the circuit, and gear up
+                    for the adrenaline fueled spectacle that awaits you in the
+                    ESPRIT RAS ROBOTS 2.0
                 </p>
             </div>
             <div className="inline-flex items-center gap-4">

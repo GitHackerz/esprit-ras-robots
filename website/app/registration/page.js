@@ -78,13 +78,10 @@ const Registration = () => {
 
     const handleConfirm = async data => {
         try {
-            await axios.post(
-                `${process.env.NEXT_PUBLIC_SERVER_URL}/api/teams`,
-                {
-                    ...data,
-                    email: data.teams[0].email
-                }
-            )
+            await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/teams`, {
+                ...data,
+                email: data.teams[0].email
+            })
             resetForm()
             setIsError(false)
             setIsSuccess(true)

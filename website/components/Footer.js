@@ -13,14 +13,14 @@ export function Footer() {
                 width={150}
                 height={150}
             />
-            <div className="flex flex-row gap-10">
+            <div className="flex md:flex-row flex-col items-center md:gap-10 gap-4">
                 <div className="inline-flex items-center text-lg gap-2">
                     <IoMailOutline className="text-white" />
                     <p>contact.espritrasrobots@gmail.com</p>
                 </div>
-                <div className="inline-flex items-center text-lg gap-2">
+                <div className="flex md:flex-row flex-col items-center text-lg gap-2">
                     <AiOutlinePhone className="text-white" />
-                    <div className="flex flex-col">
+                    <div className="flex md:flex-col flex-row md:gap-0 gap-10">
                         <p>+216 44 88 80 50</p>
                         <p>+216 58 90 60 40</p>
                     </div>

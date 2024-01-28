@@ -2,12 +2,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { RxExternalLink } from 'react-icons/rx'
 
-const Card = ({ name, title, description, link, imgPath }) => {
+const Card = ({ title, description, link, imgPath }) => {
     return (
         <div className="card">
             <Image src={imgPath} width={300} height={420} alt={'All Terrain'} />
             <div className="flex flex-col gap-2">
-                <h4>{name}</h4>
                 <h2>{title}</h2>
                 <p>{description}</p>
             </div>

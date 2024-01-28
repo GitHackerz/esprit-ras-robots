@@ -1,0 +1,109 @@
+2024-01-27 15:18:43 - Starting C:\Program Files\nodejs\node.exe  --harmony "C:\Users\Administrator\Desktop\IEEE\ESPRIT RAS ROBOTS\server\node_modules\node-windows\lib\wrapper.js" --file "C:\Users\Administrator\Desktop\IEEE\ESPRIT RAS ROBOTS\server\server.js" --scriptoptions= --log "RAS ROBOTS SERVER wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-01-27 15:18:43 - Started 8384
+2024-01-27 15:58:18 - Stopping rasrobotsserver.exe
+2024-01-27 15:58:18 - ProcessKill 8384
+2024-01-27 15:58:18 - Shutdown exception
+Message:A system shutdown is in progress. (Exception from HRESULT: 0x8007045B)
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2024-01-27 15:59:06 - Starting C:\Program Files\nodejs\node.exe  --harmony "C:\Users\Administrator\Desktop\IEEE\ESPRIT RAS ROBOTS\server\node_modules\node-windows\lib\wrapper.js" --file "C:\Users\Administrator\Desktop\IEEE\ESPRIT RAS ROBOTS\server\server.js" --scriptoptions= --log "RAS ROBOTS SERVER wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-01-27 15:59:07 - Started 4952
+2024-01-27 16:43:33 - Stopping rasrobotsserver.exe
+2024-01-27 16:43:33 - ProcessKill 4952
+2024-01-27 16:43:33 - Shutdown exception
+Message:A system shutdown is in progress. (Exception from HRESULT: 0x8007045B)
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2024-01-27 16:44:21 - Starting C:\Program Files\nodejs\node.exe  --harmony "C:\Users\Administrator\Desktop\IEEE\ESPRIT RAS ROBOTS\server\node_modules\node-windows\lib\wrapper.js" --file "C:\Users\Administrator\Desktop\IEEE\ESPRIT RAS ROBOTS\server\server.js" --scriptoptions= --log "RAS ROBOTS SERVER wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-01-27 16:44:21 - Started 4936
+2024-01-27 16:58:30 - Stopping rasrobotsserver.exe
+2024-01-27 16:58:30 - ProcessKill 4936
+2024-01-27 16:58:30 - Shutdown exception
+Message:A system shutdown is in progress. (Exception from HRESULT: 0x8007045B)
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2024-01-27 16:59:21 - Starting C:\Program Files\nodejs\node.exe  --harmony "C:\Users\Administrator\Desktop\IEEE\ESPRIT RAS ROBOTS\server\node_modules\node-windows\lib\wrapper.js" --file "C:\Users\Administrator\Desktop\IEEE\ESPRIT RAS ROBOTS\server\server.js" --scriptoptions= --log "RAS ROBOTS SERVER wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-01-27 16:59:21 - Started 5112
+2024-01-27 17:03:38 - Stopping rasrobotsserver.exe
+2024-01-27 17:03:38 - ProcessKill 5112
+2024-01-27 17:03:39 - Shutdown exception
+Message:A system shutdown is in progress. (Exception from HRESULT: 0x8007045B)
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2024-01-27 17:04:28 - Starting C:\Program Files\nodejs\node.exe  --harmony "C:\Users\Administrator\Desktop\IEEE\ESPRIT RAS ROBOTS\server\node_modules\node-windows\lib\wrapper.js" --file "C:\Users\Administrator\Desktop\IEEE\ESPRIT RAS ROBOTS\server\server.js" --scriptoptions= --log "RAS ROBOTS SERVER wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-01-27 17:04:28 - Started 4996
+2024-01-27 17:20:47 - Stopping rasrobotsserver.exe
+2024-01-27 17:20:47 - ProcessKill 4996
+2024-01-27 17:20:48 - Shutdown exception
+Message:A system shutdown is in progress. (Exception from HRESULT: 0x8007045B)
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2024-01-27 17:21:34 - Starting C:\Program Files\nodejs\node.exe  --harmony "C:\Users\Administrator\Desktop\IEEE\ESPRIT RAS ROBOTS\server\node_modules\node-windows\lib\wrapper.js" --file "C:\Users\Administrator\Desktop\IEEE\ESPRIT RAS ROBOTS\server\server.js" --scriptoptions= --log "RAS ROBOTS SERVER wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-01-27 17:21:34 - Started 5088
+2024-01-28 06:59:09 - Stopping rasrobotsserver.exe
+2024-01-28 06:59:09 - ProcessKill 5088
+2024-01-28 06:59:09 - Found child process: 4268 Name: conhost.exe
+2024-01-28 06:59:09 - Found child process: 5712 Name: node.exe
+2024-01-28 06:59:09 - Stopping process 4268
+2024-01-28 06:59:09 - Send SIGINT 4268
+2024-01-28 06:59:09 - SIGINT to 4268 failed - Killing as fallback
+2024-01-28 06:59:09 - Stopping process 5712
+2024-01-28 06:59:09 - Send SIGINT 5712
+2024-01-28 06:59:09 - SIGINT to 5712 failed - Killing as fallback
+2024-01-28 06:59:09 - Stopping process 5088
+2024-01-28 06:59:09 - Send SIGINT 5088
+2024-01-28 06:59:09 - SIGINT to 5088 failed - Killing as fallback
+2024-01-28 06:59:09 - Finished rasrobotsserver.exe
+2024-01-28 06:59:10 - Starting C:\Program Files\nodejs\node.exe  --harmony "C:\Users\Administrator\Desktop\IEEE\ESPRIT RAS ROBOTS\server\node_modules\node-windows\lib\wrapper.js" --file "C:\Users\Administrator\Desktop\IEEE\ESPRIT RAS ROBOTS\server\server.js" --scriptoptions= --log "RAS ROBOTS SERVER wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-01-28 06:59:10 - Started 11748
+2024-01-28 07:01:11 - Stopping rasrobotsserver.exe
+2024-01-28 07:01:11 - ProcessKill 11748
+2024-01-28 07:01:11 - Found child process: 12112 Name: conhost.exe
+2024-01-28 07:01:11 - Found child process: 9328 Name: node.exe
+2024-01-28 07:01:11 - Stopping process 12112
+2024-01-28 07:01:11 - Send SIGINT 12112
+2024-01-28 07:01:11 - SIGINT to 12112 failed - Killing as fallback
+2024-01-28 07:01:11 - Stopping process 9328
+2024-01-28 07:01:11 - Send SIGINT 9328
+2024-01-28 07:01:11 - SIGINT to 9328 failed - Killing as fallback
+2024-01-28 07:01:11 - Stopping process 11748
+2024-01-28 07:01:11 - Send SIGINT 11748
+2024-01-28 07:01:11 - SIGINT to 11748 failed - Killing as fallback
+2024-01-28 07:01:11 - Finished rasrobotsserver.exe
+2024-01-28 07:07:00 - Starting C:\Program Files\nodejs\node.exe  --harmony "C:\Users\Administrator\Desktop\IEEE\ESPRIT RAS ROBOTS\server\node_modules\node-windows\lib\wrapper.js" --file "C:\Users\Administrator\Desktop\IEEE\ESPRIT RAS ROBOTS\server\server.js" --scriptoptions= --log "RAS ROBOTS SERVER wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-01-28 07:07:00 - Started 12096

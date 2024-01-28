@@ -39,6 +39,22 @@ export const emailRegistrationHtml = (team) => {
             <li><strong>Email:</strong> <a href="mailto:${team.teams[0].email}">${team.teams[0].email}</a></li>
             <li><strong>Phone Number:</strong> ${team.teams[0].phone}</li>
         </ul>
+        ${team.teams[1] ? `
+            <h2>Team member's information </h2>
+            <ul>
+                <li><strong>Full Name:</strong> ${team.teams[1].name}</li>
+                <li><strong>Email:</strong> <a href="mailto:${team.teams[1].email}">${team.teams[1].email}</a></li>
+                <li><strong>Phone Number:</strong> ${team.teams[1].phone}</li>
+            </ul>
+        ` : ''}
+        ${team.teams[2] ? `
+            <h2>Team member's information </h2>
+            <ul>
+                <li><strong>Full Name:</strong> ${team.teams[2].name}</li>
+                <li><strong>Email:</strong> <a href="mailto:${team.teams[2].email}">${team.teams[2].email}</a></li>
+                <li><strong>Phone Number:</strong> ${team.teams[2].phone}</li>
+            </ul>
+        ` : ''}
         <br/>
         <h4>Now let's navigate through the registration fees for each race category:</h4>
         <ul>

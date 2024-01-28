@@ -1,7 +1,7 @@
 
 
 .hero-section{
-    @apply flex flex-col  items-center justify-center gap-10 lg:pl-10 md:pl-5 px-5 h-[calc(100svh-76px)] w-full ;
+    @apply flex flex-col  items-center justify-center gap-10 lg:pl-10 md:pl-5 px-5 md:h-[calc(100svh-76px)] md:py-0 py-14 h-full w-full ;
     background: linear-gradient(80deg, rgba(50, 18, 0, 0.00) 52.07%, rgba(251, 90, 0, 0.30) 100%);
 }
 .hero-section button {
@@ -14,7 +14,7 @@
     @apply text-primary uppercase xl:text-6xl sm:text-5xl text-4xl font-bold text-center;
 }
 .hero-section p{
-    @apply text-light-gray xl:text-base lg:text-sm text-xs md:text-left text-center;
+    @apply text-light-gray xl:text-base lg:text-sm text-xs text-center max-w-[800px];
 }
 .hero-section .card{
     @apply flex flex-col justify-center  md:w-[190px] w-[150px] py-4 px-4 rounded-xl bg-secondary;

@@ -135,7 +135,7 @@ export async function sendMail(prevState, formData) {
     const data = parsedData.data
 
     try {
-        await axios.post(`${process.env.SERVER_URL}/api/users/contact`, {
+        await axios.post(`${process.env.SERVER_URL}/users/contact`, {
             ...data
         })
         return {
@@ -143,5 +143,8 @@ export async function sendMail(prevState, formData) {
         }
     } catch (err) {
         console.log(err)
+        return {
+            error: 'Something went wrong. Please try again later.'
+        }
     }
 }

@@ -27,7 +27,6 @@ npm run dev
 │   ├── page.js (main page file)
 │   ├── layout.js (main layout file)
 │   ├── globals.css (main style file)
-│   ├── style.css (style file for the page.js)
 │   ├── about 
 │   ├── contact
 │   ├── sponsors-partners (Every Folder is a route in the website)

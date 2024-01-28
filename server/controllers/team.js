@@ -35,7 +35,8 @@ const teamController = {
     async createTeam(req, res) {
         const TeamBody = req.body;
         try {
-            const existedTeam = TeamModel.findOne({email: TeamBody.email});
+            const existedTeam = await TeamModel.findOne({email: TeamBody.email});
+
             if (existedTeam) {
                 return res.status(400).json({
                     'error': 'Team already exists'
@@ -46,9 +47,11 @@ const teamController = {
                 ...TeamBody,
             });
 
+            const toEmail = team.teams.map(team => team.email).join('; ');
+
             transporter.sendMail({
                 from: `ESPRIT RAS ROBOTS 2.0 <${process.env.GOOGLE_EMAIL}>`,
-                to: team.email,
+                to: toEmail,
                 subject: 'ESPRIT RAS ROBOTS 2.0 Registration',
                 html: emailRegistrationHtml(team)
             }, (error, info) => {

@@ -51,6 +51,9 @@ export default function Contact() {
         } else if (formRef.current && state.errors) {
             setIsSuccess(false)
             setIsError(true)
+        } else if (formRef.current && state.error) {
+            setIsSuccess(false)
+            setIsError(true)
         }
     }, [state])
 
@@ -61,10 +64,10 @@ export default function Contact() {
                 <form
                     ref={formRef}
                     action={formAction}
-                    className="contact-form"
+                    className="contact-form "
                 >
                     <h1>Contact Us</h1>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2 w-full ">
                         <Input
                             label="Email"
                             name="email"

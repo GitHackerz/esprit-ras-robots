@@ -13,8 +13,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cors());
 
-app.use('/api/users', userRouter);
-app.use('/api/teams', teamRouter);
+app.use('/users', userRouter);
+app.use('/teams', teamRouter);
 
 app.listen(PORT, async () => {
     try {

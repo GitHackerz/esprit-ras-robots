@@ -7,7 +7,11 @@ const urbanist = Urbanist({ subsets: ['latin'] })
 
 export const metadata = {
     title: 'ESPRIT RAS ROBOTS',
-    description: 'ESPRIT RAS ROBOTS Robotics competition'
+    description: 'ESPRIT RAS ROBOTS Robotics competition',
+    image: '/assets/logo2.webp',
+    url: 'https://esprit-ras-robots.tn',
+    type: 'website',
+    siteName: 'ESPRIT RAS ROBOTS 2.0'
 }
 
 export default function RootLayout({ children }) {

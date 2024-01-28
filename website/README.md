@@ -20,20 +20,4 @@ npm run dev
 ```
 4. Open [**http://localhost:3000**](http://localhost:3000) with your browser to see the result.
 
-## Folder Structure
-```bash
-├── components : (Components used in pages)
-├── app : (Pages of the website)
-│   ├── page.js (main page file)
-│   ├── layout.js (main layout file)
-│   ├── globals.css (main style file)
-│   ├── about 
-│   ├── contact
-│   ├── sponsors-partners (Every Folder is a route in the website)
-├── public : (Static files)
-├── data : (Data used in pages)
-├── .gitignore : (Git ignore file)
-├── README.md : (This file)
-├── package.json : (NPM package file)
-```
 

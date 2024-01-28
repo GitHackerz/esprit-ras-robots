@@ -67,19 +67,20 @@ export const emailRegistrationHtml = (team) => {
         <p>To make a pit stop for payment, follow the procedure below:</p>
         <ul>
             <li>
-                "5359 4014 2011 7950" in the name of <strong>"Omaima Nasser"</strong> or via D17 to <strong>53117541</strong>
+                "5359 4014 2011 7950" in the name of <strong>"Omaima Nasser"</strong> or via D17 to <strong>53 117 541</strong>
             </li>
             <li>
-                "4742 0140 4440 6151" in the name of <strong>"Aziz Hbaili"</strong> or via D17 to  <strong>28315220</strong>
+                "4742 0140 4440 6151" in the name of <strong>"Aziz Hbaili"</strong> or via D17 to  <strong>28 315 220</strong>
             </li>
             <li>
-                "5359 4014 3736 4876" in the name of <strong>"Mohamed Habib Allah Bibani"</strong> or via D17 to <strong>58906040</strong>
+                "5359 4014 3736 4876" in the name of <strong>"Mohamed Habib Allah Bibani"</strong> or via D17 to <strong>58 906 040</strong>
             </li>
             <li>
-                Bank Transfer RIB: <strong>25051000000095710133</strong> ADAM ASSIDI (Amen Bank)
+                Bank Transfer RIB: <strong>25051000000095710133</strong> ADAM ASSIDI (Zitouna Bank)
             </li>
         </ul>
-        ===> Include a photo of the transfer receipt/capture in your email.<br />
+        ===> Include a photo of the transfer receipt/capture in your email. For any information <strong>95 246 737</strong><br />
+        
         <div>
             <p>Remember, the checkered flag waves on the payment deadline: <span style="color: #ff0000"><strong>11th April 2023, at 11:59 PM </strong></span>. </p>
             <p>Our pit crew at ESPRIT RAS ROBOTS OC extends heartfelt gratitude for joining the race, and we wish you pole position success. For any additional information, contact us at <strong><a href="mailto:contact.espritrasrobots@gmail.com">contact.espritrasrobots@gmail.com</a></strong>.</p>

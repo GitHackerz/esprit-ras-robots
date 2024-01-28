@@ -46,9 +46,12 @@ export default function AboutUs() {
                     { number: 270, title: 'Activities' }
                 ]}
             >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit mattis.{' '}
+                IEEE Esprit Student Branch is the largest SB in Tunisia Section
+                as well as Region 8. Founded in 2017, IEEE ESPRIT Student Branch
+                made its way to being ranked as the largest Student Branch in
+                Tunisia Section as well as the Region 8. It includes 7 technical
+                chapters (AESS, CIS, CS, IAS, IES, PES, MTTS, RAS) alongside two
+                groups (SIGHT and WIE).
             </Section>
             <Section
                 title="IEEE ESPRIT RAS Student Branch Chapter"
@@ -61,9 +64,12 @@ export default function AboutUs() {
                 ]}
                 isInverted
             >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit mattis.{' '}
+                The RAS Student Branch Chapter is a community of students
+                focused on robotics and automation. Through workshops and
+                projects, members gain practical skills in the field. It offers
+                networking opportunities and career development in robotics and
+                automation. Join the RAS Student Branch to connect with peers
+                and stay updated with advancements in this exciting field.
             </Section>
         </main>
     )

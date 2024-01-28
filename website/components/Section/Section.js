@@ -12,7 +12,7 @@ const Section = ({ title, subtitle, children, image, isInverted, stats }) => {
             <div className="section-content-left">
                 <Image
                     src={image}
-                    alt={'About Us'}
+                    alt={title}
                     className="md:w-[800px] w-[80%] "
                     width={500}
                     height={0}

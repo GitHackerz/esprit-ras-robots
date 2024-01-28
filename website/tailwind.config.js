@@ -24,7 +24,7 @@ module.exports = {
                 'slide-up': 'slideUp 0.3s ease-out forwards'
             },
             colors: {
-                primary: '#F73B3B',
+                primary: '#FD703B',
                 secondary: '#1A1A1A',
                 background: '#141414',
                 'light-gray': '#999999',

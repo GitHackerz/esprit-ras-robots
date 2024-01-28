@@ -11,11 +11,13 @@ export default function AboutUs() {
                 subtitle="What is the event?"
                 image="/assets/logo_white.webp"
             >
-                ESPRIT RAS ROBOTS 2.0 is a national robotics competition
-                organized by the ESPRIT Robotics Club, which aims to bring
-                together robotics enthusiasts from all over Tunisia to share
-                their knowledge and skills in the field of robotics and to
-                promote this field in Tunisia.
+                ESPRIT RAS ROBOTS is a robotics competition that aims to
+                encourage and reward young enthusiasts in this field
+                highlighting their technical skills and team spirit. Our
+                exciting event will celebrate the innovation and potential of
+                robotics in an entertaining and competitive atmosphere! We are
+                delighted to welcome you to the Intercollegiate RAS Robots 2.0
+                event to be held on February 25, 2024, at ESPRIT.
             </Section>
             <Section
                 title="IEEE"

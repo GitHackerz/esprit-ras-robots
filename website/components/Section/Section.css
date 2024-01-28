@@ -3,7 +3,7 @@
 }
 
 .section-content-left {
-    @apply flex justify-center items-center;
+    @apply flex justify-center items-center md:min-w-[400px];
 }
 
 .section-content-right {

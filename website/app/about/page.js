@@ -31,9 +31,15 @@ export default function AboutUs() {
                 ]}
                 isInverted
             >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit mattis.{' '}
+                The Institute of Electrical and Electronics Engineers (IEEE) is
+                a global professional organization dedicated to advancing
+                technology for the benefit of humanity. It serves as a leading
+                authority on a wide range of areas including electrical
+                engineering, computer science, and electronics. IEEE provides a
+                platform for professionals, researchers, and students to
+                collaborate, innovate, and exchange ideas through conferences,
+                publications, standards development, and educational
+                initiatives.
             </Section>
             <Section
                 title="IEEE ESPRIT Student Branch"

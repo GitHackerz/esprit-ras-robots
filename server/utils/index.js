@@ -58,10 +58,10 @@ export const emailRegistrationHtml = (team) => {
         <br/>
         <h4>Now let's navigate through the registration fees for each race category:</h4>
         <ul>
-            ${team.challenge === 'Junior' ? '<li style="color: #4472c4"><strong>Junior:</strong> 55 DT</li>' : '<li><strong>Junior:</strong> 55 DT</li>'}
-            ${team.challenge === 'Autonomous' ? '<li style="color: #4472c4"><strong>Autonomous:</strong> 60 DT</li>' : '<li><strong>Autonomous:</strong> 60 DT</li>'}
-            ${team.challenge === 'All Terrain' ? '<li style="color: #4472c4"><strong>All Terrain:</strong> 65 DT</li>' : '<li><strong>All Terrain:</strong> 65 DT</li>'}
-            ${team.challenge === 'Fighter' ? '<li style="color: #4472c4"><strong>Fighter:</strong> 70 DT</li>' : '<li><strong>Fighter:</strong> 70 DT</li>'}
+            ${team.challenge === 'Junior' ? '<li style="color: #4472c4"><strong>Junior:</strong> 55 DT + 1% transaction fees = 55,550 DT</li>' : '<li><strong>Junior:</strong> 55 DT + 1% transaction fees = 55,550 DT</li>'}
+            ${team.challenge === 'Autonomous' ? '<li style="color: #4472c4"><strong>Autonomous:</strong> 60 DT + 1% transaction fees = 60,600 DT</li>' : '<li><strong>Autonomous:</strong> 60 DT + 1% transaction fees = 60,600 DT</li>'}
+            ${team.challenge === 'All Terrain' ? '<li style="color: #4472c4"><strong>All Terrain:</strong> 65 DT + 1% transaction fees = 65,650 DT</li>' : '<li><strong>All Terrain:</strong> 65 DT + 1% transaction fees = 65,650 DT</li>'}
+            ${team.challenge === 'Fighter' ? '<li style="color: #4472c4"><strong>Fighter:</strong> 70 DT + 1% transaction fees =  70,700 DT</li>' : '<li><strong>Fighter:</strong> 70 DT + 1% transaction fees =  70,700 DT</li>'}
         </ul>
         
         <p>To make a pit stop for payment, follow the procedure below:</p>
@@ -70,13 +70,13 @@ export const emailRegistrationHtml = (team) => {
                 "5359 4014 2011 7950" in the name of <strong>"Omaima Nasser"</strong> or via D17 to <strong>53117541</strong>
             </li>
             <li>
-                "5359 4017 3409 4929" in the name of <strong>"Mohamed Rabii zribi"</strong> or via D17 to  <strong>24968615</strong>
+                "4742 0140 4440 6151" in the name of <strong>"Aziz Hbaili"</strong> or via D17 to  <strong>28315220</strong>
             </li>
             <li>
                 "5359 4014 3736 4876" in the name of <strong>"Mohamed Habib Allah Bibani"</strong> or via D17 to <strong>58906040</strong>
             </li>
             <li>
-                Bank Transfer RIB: <strong>07 098 0500105840753 96</strong> (Amen Bank)
+                Bank Transfer RIB: <strong>25051000000095710133</strong> ADAM ASSIDI (Amen Bank)
             </li>
         </ul>
         ===> Include a photo of the transfer receipt/capture in your email.<br />

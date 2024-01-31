@@ -1,7 +1,7 @@
 
 
 .hero-section {
-    @apply flex flex-col items-center justify-center gap-10 lg:pl-10 md:pl-5 px-5 md:h-[calc(100vh-76px)] md:py-0 py-14 h-full w-full;
+    @apply flex flex-col items-center justify-center gap-10 lg:pl-10 md:pl-5 px-5 md:h-[calc(100vh-76px)] md:py-0 py-14 h-[100svh] w-full;
 }
 
 .hero-section .overlay {
@@ -9,7 +9,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100svh;
     background-image: url('/assets/hero.png');
     background-size: cover;
     opacity: 0.2; /* Adjust as needed */

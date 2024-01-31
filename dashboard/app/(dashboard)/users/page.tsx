@@ -1,12 +1,11 @@
-import TableUsers from "@/components/Tables/TableUsers";
-
+import TableUsers from '@/components/Tables/TableUsers'
 
 const Page = () => {
     return (
         <main>
-            <TableUsers/>
+            <TableUsers />
         </main>
-    );
-};
+    )
+}
 
-export default Page;
+export default Page

@@ -110,7 +110,7 @@ const userController = {
     },
     async login(req, res) {
         const {email, password} = req.body;
-        console.log(email, password)
+    
         try {
             if (!email || !password) {
                 return res.status(400).json({
@@ -130,9 +130,7 @@ const userController = {
                     'error': 'Invalid password'
                 });
             }
-            const token = jwt.sign({user}, process.env.JWT_SECRET, {
-                expiresIn: '1d'
-            });
+            const token = jwt.sign({user}, process.env.JWT_SECRET);
 
             res.json({
                 'message': 'User logged in successfully',

@@ -1,24 +1,24 @@
-"use client";
-import "./globals.css";
-import "./data-tables-css.css";
-import "./satoshi.css";
-import {useEffect, useState} from "react";
+'use client'
+import '../globals.css'
+import '../data-tables-css.css'
+import '../satoshi.css'
+import { useEffect, useState } from 'react'
 
-import Sidebar from "@/components/Sidebar";
-import Header from "@/components/Header";
+import Sidebar from '@/components/Sidebar'
+import Header from '@/components/Header'
 
 export default function RootLayout({
-                                       children,
-                                   }: {
-    children: React.ReactNode;
+    children
+}: {
+    children: React.ReactNode
 }) {
-    const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [sidebarOpen, setSidebarOpen] = useState(false)
 
-    const [loading, setLoading] = useState<boolean>(true);
+    const [loading, setLoading] = useState<boolean>(true)
 
     useEffect(() => {
-        setTimeout(() => setLoading(false), 1000);
-    }, []);
+        setTimeout(() => setLoading(false), 1000)
+    }, [])
 
     return (
         <div className="flex h-screen overflow-hidden">
@@ -38,5 +38,5 @@ export default function RootLayout({
                 </main>
             </div>
         </div>
-    );
+    )
 }

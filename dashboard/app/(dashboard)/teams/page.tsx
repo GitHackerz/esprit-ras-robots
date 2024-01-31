@@ -1,12 +1,11 @@
-import TableTeams from "@/components/Tables/TableTeams";
-
+import TableTeams from '@/components/Tables/TableTeams'
 
 const Page = () => {
     return (
         <main>
-            <TableTeams/>
+            <TableTeams />
         </main>
-    );
-};
+    )
+}
 
-export default Page;
+export default Page

@@ -110,6 +110,7 @@ const userController = {
     },
     async login(req, res) {
         const {email, password} = req.body;
+        console.log(email, password)
         try {
             if (!email || !password) {
                 return res.status(400).json({

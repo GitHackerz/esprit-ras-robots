@@ -1,10 +1,10 @@
 import express from "express";
 import userController from "../controllers/user.js";
-import {isAdmin, isLoggedIn, isSelf} from "../middlewares/auth.js";
+import {isLoggedIn, isSelf} from "../middlewares/auth.js";
 
 const router = express.Router();
 
-router.get("/", isLoggedIn, isAdmin, userController.getUsers);
+router.get("/", userController.getUsers);
 router.get("/:id", isLoggedIn, userController.getUser);
 router.post("/", userController.createUser);
 router.put("/:id", isLoggedIn, isSelf, userController.updateUser);

@@ -12,10 +12,12 @@ export async function signin (formData: FormData){
                 password: formData.get('password')
             })
         })
-        return await res.json()
+        return {data : await res.json()}
     }
     catch (err)
     {
-        console.error(err)
+        return {
+            error: 'Internal Server Error'
+        }
     }
 }

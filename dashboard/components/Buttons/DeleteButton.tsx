@@ -1,6 +1,8 @@
+'use client'
+
 import { useFormState } from 'react-dom'
-import { deleteUser } from '@/actions'
 import Alert from '@/components/Alert'
+import { useEffect, useState } from 'react'
 
 export function DeleteButton({
     deleteUser,
@@ -10,7 +12,19 @@ export function DeleteButton({
     id: string
 }) {
     // @ts-ignore
-    const [state, formAction] = useFormState(deleteUser, { id: '' })
+    const [state, formAction] = useFormState(deleteUser, {
+        id: '',
+        success: false,
+        error: ''
+    })
+    const [isError, setIsError] = useState(true)
+
+    useEffect(() => {
+        if (!state.success && state.error) setIsError(true)
+        else if (state.success) {
+            setIsError(false)
+        }
+    }, [state])
 
     return (
         <form action={formAction}>
@@ -42,12 +56,11 @@ export function DeleteButton({
                     />
                 </svg>
             </button>
-            {!state.success && (
+            {isError && (
                 <Alert
                     type="error"
                     message={state.error}
-                    className="mt-3"
-                    reset=""
+                    reset={() => setIsError(false)}
                 />
             )}
         </form>

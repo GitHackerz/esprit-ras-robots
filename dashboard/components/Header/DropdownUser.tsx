@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { signout } from '@/actions'
+import { signout } from '@/actions/user-actions'
 
 const DropdownUser = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false)

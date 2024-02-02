@@ -1,6 +1,6 @@
 'use client'
 import { ApexOptions } from 'apexcharts'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 const ApexCharts = dynamic(() => import('react-apexcharts'), { ssr: false })
 
@@ -95,7 +95,6 @@ const ChartTwo: React.FC = () => {
             ...prevState
         }))
     }
-    handleReset
 
     return (
         <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
@@ -141,12 +140,12 @@ const ChartTwo: React.FC = () => {
 
             <div>
                 <div id="chartTwo" className="-ml-5 -mb-9">
-                    <ApexCharts
-                        options={options}
-                        series={state.series}
-                        type="bar"
-                        height={350}
-                    />
+                    {/*<ApexCharts*/}
+                    {/*    options={options}*/}
+                    {/*    series={state.series}*/}
+                    {/*    type="bar"*/}
+                    {/*    height={350}*/}
+                    {/*/>*/}
                 </div>
             </div>
         </div>

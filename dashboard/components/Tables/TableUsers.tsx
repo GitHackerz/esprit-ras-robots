@@ -1,6 +1,5 @@
 import { User } from '@/types/user'
-import { deleteUser, getUsers } from '@/actions'
-import { useFormState } from 'react-dom'
+import { deleteUser, getUsers } from '@/actions/user-actions'
 import { DeleteButton } from '@/components/Buttons/DeleteButton'
 
 const TableUsers = async () => {
@@ -63,7 +62,7 @@ const TableUsers = async () => {
                                         <div className="flex items-center space-x-3.5">
                                             <DeleteButton
                                                 id={user._id}
-                                                formAction={formAction}
+                                                deleteUser={deleteUser}
                                             />
                                         </div>
                                     </td>

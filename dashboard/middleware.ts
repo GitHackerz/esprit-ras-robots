@@ -1,17 +1,20 @@
-// pages/_middleware.js
-
 import { NextRequest, NextResponse } from 'next/server'
 import { getUserToken } from '@/utils/serverUtils'
 
 export default async function middleware(req: NextRequest) {
-    if (req.nextUrl.pathname === '/signin') return NextResponse.next()
+    const { pathname } = req.nextUrl
 
-    const { user, token }: any = await getUserToken()
+    if (pathname.startsWith('/_next') || pathname.startsWith('/favicon'))
+        return NextResponse.next()
 
-    if (!user || !token)
-        return NextResponse.redirect(new URL('/signin', req.nextUrl).toString())
+    const { token } = await getUserToken()
 
-    return NextResponse.next()
+    if (pathname.includes('signin') && token) {
+        console.log('redirecting to /')
+        return NextResponse.redirect(new URL('/', req.nextUrl).href)
+    } else if (!token && !pathname.includes('signin'))
+        return NextResponse.redirect(new URL('/signin', req.nextUrl).href)
+    else return NextResponse.next()
 }
 
 export const config = {

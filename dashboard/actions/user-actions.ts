@@ -4,6 +4,7 @@ import axios from 'axios'
 import { removeUserToken } from '@/utils/serverUtils'
 import { cookies } from 'next/headers'
 import { revalidatePath } from 'next/cache'
+import { redirect } from 'next/navigation'
 
 export async function signin(prevState: any, formData: FormData) {
     try {
@@ -27,7 +28,8 @@ export async function signin(prevState: any, formData: FormData) {
 
 export async function signout() {
     try {
-        removeUserToken()
+        await removeUserToken()
+        redirect('/signin')
     } catch (err: any) {
         return {
             success: false,

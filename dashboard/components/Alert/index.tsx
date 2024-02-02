@@ -12,7 +12,7 @@ const Index = ({
 }: {
     message: string
     type: string
-    reset: MouseEventHandler<SVGAElement>
+    reset: MouseEventHandler
 }) => {
     return (
         <div className={`alert alert-${type}`}>

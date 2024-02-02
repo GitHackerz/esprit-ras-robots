@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { useFormState } from 'react-dom'
-import { signin } from '@/actions'
+import { signin } from '@/actions/user-actions'
 import { CiMail } from 'react-icons/ci'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import Alert from '@/components/Alert'
@@ -22,8 +22,7 @@ const SigninForm = () => {
         if (!state.success && state.error) setIsError(true)
         else if (state.success) {
             setIsError(false)
-            setUserToken(state.user, state.token)
-            redirect('/')
+            setUserToken(state.user, state.token).then(r => redirect('/'))
         }
     }, [formAction, state])
 

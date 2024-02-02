@@ -22,7 +22,7 @@ const SigninForm = () => {
         if (!state.success && state.error) setIsError(true)
         else if (state.success) {
             setIsError(false)
-            setUserToken(state.user, state.token).then(r => redirect('/'))
+            setUserToken(state.user, state.token).then(() => redirect('/'))
         }
     }, [formAction, state])
 

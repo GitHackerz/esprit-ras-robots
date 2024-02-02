@@ -1,8 +1,7 @@
 'use server'
 
 import axios from 'axios'
-import { removeUserToken } from '@/utils/serverUtils'
-import { cookies } from 'next/headers'
+import { getUserToken, removeUserToken } from '@/utils/serverUtils'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
@@ -45,17 +44,14 @@ export async function deleteUser(
     success: boolean
     error?: string
 }> {
-    const cookiesStore = cookies()
-    console.log(cookiesStore.get('token')?.value)
+    const { token } = await getUserToken()
+
     try {
-        const res = await axios.delete(
-            `${process.env.API_URL}/users/${data.get('id')}`,
-            {
-                headers: {
-                    Authorization: `Bearer ${cookiesStore.get('token')?.value}`
-                }
+        await axios.delete(`${process.env.API_URL}/users/${data.get('id')}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
             }
-        )
+        })
 
         revalidatePath('/users')
 

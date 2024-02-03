@@ -2,12 +2,24 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { signout } from '@/actions/user-actions'
+import { getUserToken } from '@/utils/serverUtils'
 
 const DropdownUser = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false)
+    const [userS, setUserS] = useState({ name: '', isAdmin: false })
 
     const trigger = useRef<any>(null)
     const dropdown = useRef<any>(null)
+
+    useEffect(() => {
+        const getUser = async () => {
+            const { user } = await getUserToken()
+            if (typeof user === 'string') {
+                setUserS(JSON.parse(user))
+            }
+        }
+        getUser()
+    }, [])
 
     // close on click outside
     useEffect(() => {
@@ -45,9 +57,11 @@ const DropdownUser = () => {
             >
                 <span className="hidden text-right lg:block">
                     <span className="block text-sm font-medium text-black dark:text-white">
-                        Thomas Anree
+                        {userS?.name}
                     </span>
-                    <span className="block text-xs">UX Designer</span>
+                    <span className="block text-xs">
+                        {userS?.isAdmin ? 'Admin' : 'Organizing Committee'}
+                    </span>
                 </span>
 
                 <span className="h-12 w-12 rounded-full">

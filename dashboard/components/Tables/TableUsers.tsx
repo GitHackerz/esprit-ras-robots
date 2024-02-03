@@ -1,16 +1,23 @@
 import { User } from '@/types/user'
 import { deleteUser, getUsers } from '@/actions/user-actions'
 import { DeleteButton } from '@/components/Buttons/DeleteButton'
+import { EditButton } from '@/components/Buttons/EditButton'
+import { Button } from '@nextui-org/react'
 
 const TableUsers = async () => {
     const data: [User] = await getUsers()
 
     return (
         <div className="rounded-sm border border-stroke bg-white px-5 pt-2 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
-            <div className="py-6 px-4 md:px-6 xl:px-7.5">
+            <div className="py-6 px-4 md:px-6 xl:px-7.5 inline-flex items-center justify-between w-full">
                 <h4 className="text-xl font-semibold text-black dark:text-white">
                     List Users
                 </h4>
+                <div>
+                    <Button className="text-blue-900 hover:text-white bg-transparent hover:bg-blue-900 border border-blue-900">
+                        Add User
+                    </Button>
+                </div>
             </div>
             <div className="max-w-full overflow-x-auto">
                 <table className="w-full table-auto">
@@ -60,9 +67,10 @@ const TableUsers = async () => {
                                     </td>
                                     <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                                         <div className="flex items-center space-x-3.5">
+                                            <EditButton user={user} />
                                             <DeleteButton
                                                 id={user._id}
-                                                deleteUser={deleteUser}
+                                                deleteFunction={deleteUser}
                                             />
                                         </div>
                                     </td>

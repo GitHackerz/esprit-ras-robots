@@ -4,37 +4,23 @@ import './data-tables-css.css'
 import './satoshi.css'
 import { useEffect, useState } from 'react'
 import Loader from '@/components/common/Loader'
+import Provider from '@/app/Provider'
+import { NextUIProvider } from '@nextui-org/react'
 
 export default function RootLayout({
     children
 }: {
     children: React.ReactNode
 }) {
-    const [loading, setLoading] = useState<boolean>(true)
-
-    useEffect(() => {
-        setTimeout(() => setLoading(false), 1000)
-    }, [])
-
-    if (loading) {
-        return (
-            <html lang="en">
-                <body suppressHydrationWarning={true}>
-                    <div className="dark:bg-boxdark-2 dark:text-bodydark">
-                        {<Loader />}
-                    </div>
-                </body>
-            </html>
-        )
-    } else {
-        return (
-            <html lang="en">
-                <body suppressHydrationWarning={true}>
+    return (
+        <html lang="en">
+            <body suppressHydrationWarning={true}>
+                <NextUIProvider>
                     <div className="dark:bg-boxdark-2 dark:text-bodydark">
                         {children}
                     </div>
-                </body>
-            </html>
-        )
-    }
+                </NextUIProvider>
+            </body>
+        </html>
+    )
 }

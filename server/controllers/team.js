@@ -105,6 +105,7 @@ const teamController = {
     //DELETE
     async deleteTeam(req, res) {
         const {id} = req.params;
+        console.log(id)
         try {
             if (!id) {
                 return res.status(400).json({

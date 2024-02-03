@@ -6,7 +6,7 @@ import { signin } from '@/actions/user-actions'
 import { CiMail } from 'react-icons/ci'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import Alert from '@/components/Alert'
-import { redirect } from 'next/navigation'
+import { redirect, useRouter } from 'next/navigation'
 import { setUserToken } from '@/utils/serverUtils'
 
 const SigninForm = () => {
@@ -17,14 +17,16 @@ const SigninForm = () => {
     })
     const [showPassword, setShowPassword] = useState(false)
     const [isError, setIsError] = useState(false)
+    const router = useRouter()
 
     useEffect(() => {
         if (!state.success && state.error) setIsError(true)
         else if (state.success) {
             setIsError(false)
-            setUserToken(state.user, state.token).then(() => redirect('/'))
+            setUserToken(state.user, state.token)
+            router.push('/')
         }
-    }, [formAction, state])
+    }, [formAction, router, state])
 
     return (
         <form action={formAction}>

@@ -54,6 +54,7 @@ const userController = {
         const {id} = req.params;
         const userBody = req.body;
         try {
+            console.log(userBody);
             if (!id) {
                 return res.status(400).json({
                     'error': 'Missing user id'

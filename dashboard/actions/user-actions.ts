@@ -37,21 +37,25 @@ export async function signout() {
     }
 }
 
+interface DeleteUserData {
+    id: string
+}
+
 export async function deleteUser(
-    prevState: any,
-    data: FormData
-): Promise<{
-    success: boolean
-    error?: string
-}> {
+    prevState: { success: boolean; error?: string },
+    payload: DeleteUserData
+): Promise<{ success: boolean; error?: string }> {
     const { token } = await getUserToken()
 
     try {
-        await axios.delete(`${process.env.API_URL}/users/${data.get('id')}`, {
-            headers: {
-                Authorization: `Bearer ${token}`
+        const res = await axios.delete(
+            `${process.env.API_URL}/users/${payload.id}`,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
             }
-        })
+        )
 
         revalidatePath('/users')
 
@@ -77,3 +81,46 @@ export async function getUsers() {
         console.log(e)
     }
 }
+
+export async function updateUser(id: number, data: any) {
+    try {
+        const { token } = await getUserToken()
+        const res = await axios.put(
+            `${process.env.API_URL}/users/${id}`,
+            data,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        )
+        revalidatePath('/users')
+        return {
+            success: true,
+            user: res.data
+        }
+    } catch (err: any) {
+        return {
+            success: false,
+            error: err?.response?.data?.error || err.message
+        }
+    }
+}
+
+// export async function refreshToken() {
+//     try {
+//         const { token } = await getUserToken()
+//         const res = await axios.post(
+//             `${process.env.API_URL}/users/refresh-token`,
+//             {},
+//             {
+//                 headers: {
+//                     Authorization: `Bearer ${token}`
+//                 }
+//             }
+//         )
+//         return res.data
+//     } catch (err: any) {
+//         return err.response.data.error
+//     }
+// }

@@ -17,7 +17,7 @@ export async function getTeams() {
         )
         return res.data
     } catch (err) {
-        console.log(err?.response?.data?.error)
+        console.error(err?.response?.data?.error)
         return []
     }
 }
@@ -27,20 +27,17 @@ export async function deleteTeam(prevTeams, data) {
         const id = data.get('id')
 
         const { token } = await getUserToken()
-        const res = await axios.delete(
-            `${process.env.NEXT_PUBLIC_API_URL}/teams/${id}`,
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
+        await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/teams/${id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
             }
-        )
+        })
         revalidatePath('/teams')
         return {
             success: true
         }
     } catch (err) {
-        // console.log(err?.response?.data?.error)
+        console.error(err?.response?.data?.error)
         return {
             success: false,
             error: err?.response?.data?.error || err.message
@@ -73,23 +70,42 @@ export async function updateTeam(id, data) {
     }
 }
 
-export async function editTeam(prevTeams, data) {
+export const changeTeamPaymentStatus = async formData => {
     try {
-        console.log(data)
-        console.log('test')
-        // const { token } = await getUserToken()
-        // const res = await axios.put(
-        //     `${process.env.NEXT_PUBLIC_API_URL}/teams/${id}`,
-        //     data,
-        //     {
-        //         headers: {
-        //             Authorization: `Bearer ${token}`
-        //         }
-        //     }
-        // )
-        // revalidatePath('/teams')
-        // return res.data
+        const id = formData.get('id')
+        const isPaid = formData.get('isPaid')
+        const { token } = await getUserToken()
+        await axios.put(
+            `${process.env.NEXT_PUBLIC_API_URL}/teams/payment/${id}`,
+            { isPaid: isPaid !== 'true' },
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        )
+        revalidatePath('/teams')
     } catch (err) {
-        return err?.response?.data?.error || err.message
+        console.error(err?.response?.data?.error)
+    }
+}
+
+export const changeTeamPresenceStatus = async formData => {
+    try {
+        const id = formData.get('id')
+        const isPresent = formData.get('isPresent')
+        const { token } = await getUserToken()
+        await axios.put(
+            `${process.env.NEXT_PUBLIC_API_URL}/teams/presence/${id}`,
+            { isPresent: isPresent !== 'true' },
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        )
+        revalidatePath('/teams')
+    } catch (err) {
+        console.error(err?.response?.data?.error)
     }
 }

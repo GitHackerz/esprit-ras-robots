@@ -54,7 +54,7 @@ const userController = {
         const {id} = req.params;
         const userBody = req.body;
         try {
-            console.log(userBody);
+
             if (!id) {
                 return res.status(400).json({
                     'error': 'Missing user id'
@@ -66,7 +66,9 @@ const userController = {
                     'error': 'User not found'
                 });
             }
-            const updatedUser = await userModel.findByIdAndUpdate(id, {...userBody}, {new: true});
+
+            const password = userBody.password ? bcryptjs.hashSync(userBody.password, 10) : user.password;
+            const updatedUser = await userModel.findByIdAndUpdate(id, {...userBody, password: password}, {new: true});
             res.json({
                 'message': 'User updated successfully',
                 updatedUser
@@ -111,7 +113,7 @@ const userController = {
     },
     async login(req, res) {
         const {email, password} = req.body;
-    
+
         try {
             if (!email || !password) {
                 return res.status(400).json({

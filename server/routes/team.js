@@ -4,7 +4,7 @@ import {isLoggedIn, isSelf} from "../middlewares/auth.js";
 
 const router = express.Router();
 
-router.get("/", teamController.getTeams);
+router.get("/", isLoggedIn, teamController.getTeams);
 router.get("/:id", isLoggedIn, teamController.getTeam);
 router.post("/", teamController.createTeam);
 router.put("/:id", isLoggedIn, isSelf, teamController.updateTeam);

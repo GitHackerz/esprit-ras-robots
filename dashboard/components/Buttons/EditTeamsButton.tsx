@@ -28,6 +28,12 @@ import error = Simulate.error
 import Alert from '@/components/Alert'
 
 export function EditTeamsButton({ team }: { team: Team }) {
+    interface teams {
+        name: string;
+        email: string;
+        phone: string;
+
+    }
     const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
     const [name, setName] = useState<string>(team?.name)
     const [email, setEmail] = useState<string>(team?.email)
@@ -43,23 +49,17 @@ export function EditTeamsButton({ team }: { team: Team }) {
         new Set([team.isPresent ? 'Present' : 'Not Present'])
     )
     const [score, setScore] = useState<number>(team?.score)
-/*     const [teams, setTeams]= useState<>
- */    const [isSuccess, setIsSuccess] = useState(false)
+    const [teams, setTeams] = useState<teams[]>(team.teams)
+    const [isSuccess, setIsSuccess] = useState(false)
     const [isError, setIsError] = useState(false)
-
     const handleEdit = async () => {
         const { success, error } = await updateTeam(team._id, {
             name,
             email,
-            challenge : [...challenge][0],
+            challenge: [...challenge][0],
             establishment,
             club,
-            /*     teams: {
-                    name,
-                    email,
-                    phone,
-                },  */
-            score,
+            teams,
             isPaid: payment.currentKey === 'Paid',
             isPresent: presence.currentKey === 'Present',
         })
@@ -205,40 +205,52 @@ export function EditTeamsButton({ team }: { team: Team }) {
                                         Present
                                     </SelectItem>
                                 </Select>
-                                {team.teams.map((item,index) => 
-                                <React.Fragment>
-                                <Input
-                                endContent={
-                                    <FaSchool className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                                }
-                                label="Establishment"
-                                placeholder="Enter Team establishment"
-                                value={establishment}
-                                onValueChange={setEstablishment}
-                                variant="bordered"
-                            />
-                            <Input
-                                    endContent={
-                                        <FaSchool className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                                    }
-                                    label="Establishment"
-                                    placeholder="Enter Team establishment"
-                                    value={establishment}
-                                    onValueChange={setEstablishment}
-                                    variant="bordered"
-                                />
-                                <Input
-                                    endContent={
-                                        <FaSchool className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                                    }
-                                    label="Establishment"
-                                    placeholder="Enter Team establishment"
-                                    value={establishment}
-                                    onValueChange={setEstablishment}
-                                    variant="bordered"
-                                    
-                                />
-                                </React.Fragment>)}
+                                {team.teams.map((item, index) =>
+                                    <React.Fragment>
+                                        <Input
+                                            endContent={
+                                                <FaSchool className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                                            }
+                                            label="Name"
+                                            placeholder="Enter Team member Name"
+                                            value={teams[index].name}
+                                            onValueChange={(newValue) => {
+                                                const updatedTeams = [...teams];
+                                                updatedTeams[index].name = newValue;
+                                                setTeams(updatedTeams);
+                                            }}
+                                            variant="bordered"
+                                        />
+                                        <Input
+                                            endContent={
+                                                <FaSchool className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                                            }
+                                            label="email"
+                                            placeholder="Enter Team member email"
+                                            value={teams[index].email}
+                                            onValueChange={(newValue) => {
+                                                const updatedTeams = [...teams];
+                                                updatedTeams[index].email = newValue;
+                                                setTeams(updatedTeams);
+                                            }}
+                                            variant="bordered"
+                                        />
+                                        <Input
+                                            endContent={
+                                                <FaSchool className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                                            }
+                                            label="phone"
+                                            placeholder="Enter Team member phone"
+                                            value={teams[index].phone}
+                                            onValueChange={(newValue) => {
+                                                const updatedTeams = [...teams];
+                                                updatedTeams[index].phone = newValue;
+                                                setTeams(updatedTeams);
+                                            }}
+                                            variant="bordered"
+
+                                        />
+                                    </React.Fragment>)}
                             </ModalBody>
                             <ModalFooter>
                                 <Button

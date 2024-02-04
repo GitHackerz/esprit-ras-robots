@@ -34,3 +34,28 @@ export async function deleteTeam(prevTeams: any, data: FormData) {
         return err?.response?.data?.error || err.message
     }
 }
+
+export async function updateTeam(id: number, data: any) {
+    try {
+        const { token } = await getUserToken()
+        const res = await axios.put(
+            `${process.env.API_URL}/teams/${id}`,
+            data,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        )
+        revalidatePath('/teams')
+        return {
+            success: true,
+            user: res.data
+        }
+    } catch (err: any) {
+        return {
+            success: false,
+            error: err?.response?.data?.error || err.message
+        }
+    }
+}

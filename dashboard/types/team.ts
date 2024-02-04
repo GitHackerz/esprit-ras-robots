@@ -9,7 +9,7 @@ export type Team = {
         name: string;
         email: string;
         phone: string;
-    };
+    }[];
     score: number;
     isPaid: boolean;
     isPresent: boolean;

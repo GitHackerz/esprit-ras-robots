@@ -16,6 +16,7 @@ export function DeleteButton({ deleteFunction, id }) {
     const [isSuccess, setIsSuccess] = useState(false)
 
     useEffect(() => {
+        console.log(state)
         if (!state.success && state.error) {
             setIsError(true)
             setIsSuccess(false)

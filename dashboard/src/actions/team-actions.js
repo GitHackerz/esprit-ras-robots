@@ -36,10 +36,15 @@ export async function deleteTeam(prevTeams, data) {
             }
         )
         revalidatePath('/teams')
-        return res.data
+        return {
+            success: true
+        }
     } catch (err) {
         // console.log(err?.response?.data?.error)
-        return err?.response?.data?.error || err.message
+        return {
+            success: false,
+            error: err?.response?.data?.error || err.message
+        }
     }
 }
 

@@ -129,6 +129,60 @@ const teamController = {
                 'error': error.message
             });
         }
+    },
+    async updateTeamPresence(req, res) {
+        const {id} = req.params;
+        const {isPresent} = req.body;
+        try {
+            if (!id) {
+                return res.status(400).json({
+                    'error': 'Missing Team id'
+                });
+            }
+            const Team = await TeamModel.findById(id);
+            if (!Team) {
+                return res.status(404).json({
+                    'error': 'Team not found'
+                });
+            }
+            const updatedTeam = await TeamModel.findByIdAndUpdate(id, {isPresent}, {new: true});
+            res.json({
+                'message': 'Team presence updated successfully',
+                updatedTeam
+            });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({
+                'error': error.message
+            });
+        }
+    },
+    async updateTeamPayment(req, res) {
+        const {id} = req.params;
+        const {isPaid} = req.body;
+        try {
+            if (!id) {
+                return res.status(400).json({
+                    'error': 'Missing Team id'
+                });
+            }
+            const Team = await TeamModel.findById(id);
+            if (!Team) {
+                return res.status(404).json({
+                    'error': 'Team not found'
+                });
+            }
+            const updatedTeam = await TeamModel.findByIdAndUpdate(id, {isPaid}, {new: true});
+            res.json({
+                'message': 'Team payment updated successfully',
+                updatedTeam
+            });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({
+                'error': error.message
+            });
+        }
     }
 }
 

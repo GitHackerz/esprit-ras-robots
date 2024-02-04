@@ -9,5 +9,7 @@ router.get("/:id", isLoggedIn, teamController.getTeam);
 router.post("/", teamController.createTeam);
 router.put("/:id", isLoggedIn, isSelf, teamController.updateTeam);
 router.delete("/:id", isLoggedIn, isSelf, teamController.deleteTeam);
+router.put("/presence/:id", isLoggedIn, teamController.updateTeamPresence);
+router.put("/payment/:id", isLoggedIn, teamController.updateTeamPayment);
 
 export default router;

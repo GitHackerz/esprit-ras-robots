@@ -1,25 +1,31 @@
 import { Team } from '@/types/team'
-import { EditButton } from '@/components/Buttons/EditButton'
+import { EditTeamsButton } from '@/components/Buttons/EditTeamsButton'
 import { DeleteButton } from '@/components/Buttons/DeleteButton'
 import { deleteTeam } from '@/actions/team-actions'
 import { log } from 'node:util'
+import { Button } from '@nextui-org/react'
 
 const getTeams = async () => {
     try {
         const res = await fetch(process.env.NEXT_PUBLIC_API_URL + '/teams')
         return await res.json()
     } catch (e) {
-        console.log(e)
+        console.log("ma9loub",e)
     }
 }
 const TableTeams = async () => {
     const data: [Team] = await getTeams()
     return (
         <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
-            <div className="py-6 px-4 md:px-6 xl:px-7.5">
+            <div className="py-6 px-4 md:px-6 xl:px-7.5 inline-flex items-center justify-between w-full">
                 <h4 className="text-xl font-semibold text-black dark:text-white">
                     List Teams
                 </h4>
+                <div>
+                    <Button className="text-blue-900 hover:text-white bg-transparent hover:bg-blue-900 border border-blue-900">
+                        Add Team
+                    </Button>
+                </div>
             </div>
             <div className="max-w-full overflow-x-auto">
                 <table className="w-full table-auto">
@@ -92,8 +98,7 @@ const TableTeams = async () => {
                                     </td>
                                     <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                                         <div className="flex items-center space-x-3.5">
-                                            {/*<EditButton />*/}
-
+                                        <EditTeamsButton team={team} />
                                             <DeleteButton
                                                 id={team._id}
                                                 deleteFunction={deleteTeam}

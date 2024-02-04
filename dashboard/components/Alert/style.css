@@ -1,8 +1,0 @@
-.alert{
-    @apply flex items-center justify-center gap-4 py-4 px-6 rounded-md text-white font-semibold fixed bottom-0 right-0 m-4;
-}
-.alert-success {background-color: #4CAF50;}
-.alert-info {background-color: #2196F3;}
-.alert-warning {background-color: #ff9800;}
-.alert-error {background-color: #f44336;}
-

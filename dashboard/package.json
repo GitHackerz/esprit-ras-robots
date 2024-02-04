@@ -1,20 +1,18 @@
 {
-  "name": "tailadmin-free-nextjs",
+  "name": "dashboard",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix"
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",
     "@react-jvectormap/core": "^1.0.4",
     "@react-jvectormap/unitedstates": "^1.0.1",
-    "@types/node": "20.11.13",
-    "@types/react": "18.2.48",
-    "@types/react-dom": "18.2.18",
     "apexcharts": "^3.45.2",
     "axios": "^1.6.7",
     "eslint-config-prettier": "^9.1.0",
@@ -28,8 +26,7 @@
     "react-apexcharts": "^1.4.1",
     "react-dom": "18.2.0",
     "react-icons": "^5.0.1",
-    "react-jvectormap": "^0.0.16",
-    "typescript": "5.3.3"
+    "react-jvectormap": "^0.0.16"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.17",

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/free-nextjs-admin-dashboard-main.iml" filepath="$PROJECT_DIR$/.idea/free-nextjs-admin-dashboard-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dashboard.iml" filepath="$PROJECT_DIR$/.idea/dashboard.iml" />
     </modules>
   </component>
 </project>

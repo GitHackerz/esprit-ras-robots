@@ -67,13 +67,13 @@ export const emailRegistrationHtml = (team) => {
         <p>To make a pit stop for payment, follow the procedure below:</p>
         <ul>
             <li>
-                "5359 4014 2011 7950" in the name of <strong>"Omaima Nasser"</strong> or via D17 to <strong>53 117 541</strong>
+                <strong>Postal Transfer: </strong> "5359 4014 2011 7950" in the name of <strong>"Omaima Nasser"</strong> 
             </li>
             <li>
-                "4742 0140 4440 6151" in the name of <strong>"Aziz Hbaili"</strong> or via D17 to  <strong>28 315 220</strong>
+                <strong>Postal Transfer: </strong> "4742 0140 4440 6151" in the name of <strong>"Aziz Hbaili"</strong> 
             </li>
             <li>
-                "5359 4014 3736 4876" in the name of <strong>"Mohamed Habib Allah Bibani"</strong> or via D17 to <strong>58 906 040</strong>
+                <strong>Postal Transfer: </strong> "5359 4014 3736 4876" in the name of <strong>"Mohamed Habib Allah Bibani"</strong>
             </li>
             <li>
                 Bank Transfer RIB: <strong>25051000000095710133</strong> ADAM ASSIDI (Zitouna Bank)

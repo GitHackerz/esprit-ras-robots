@@ -6,10 +6,6 @@ const Challenges = () => (
         <div className="about-challenges-header">
             <h1>About Challenges</h1>
             <span></span>
-            {/*<p>*/}
-            {/*    Lorem ipsum dolor sit amet consectetur adipisicing elit.*/}
-            {/*    Quisquam, voluptas.*/}
-            {/*</p>*/}
         </div>
         <div className="about-challenges-content">
             <Card
@@ -30,12 +26,12 @@ const Challenges = () => (
                 link="https://drive.google.com/file/d/1UFglS_dQ23ZZ90mG7dZx3-AB35ukzLD4/view"
                 imgPath="/assets/challenges/Junior.webp"
             />
-            {/*<Card*/}
-            {/*    title="Fighter"*/}
-            {/*    description="Monza is a battlefield where coding meets combat, and the power of hardware is unleashed in a fierce duel between robots! Enter the arena inspired by the iconic Monza Circuit in Formula 1, where your robots engage in a relentless clash of strength and strategy"*/}
-            {/*    link="https://www.google.com/"*/}
-            {/*    imgPath="/assets/challenges/Fighter.webp"*/}
-            {/*/>*/}
+            <Card
+                title="Fighter"
+                description="Monza is a battlefield where coding meets combat, and the power of hardware is unleashed in a fierce duel between robots! Enter the arena inspired by the iconic Monza Circuit in Formula 1, where your robots engage in a relentless clash of strength and strategy"
+                link="https://drive.google.com/file/d/1Z9dx0Yl-JELgPpOFHiM5hMYCI5-cpvVm/view"
+                imgPath="/assets/challenges/Fighter.webp"
+            />
         </div>
     </section>
 )

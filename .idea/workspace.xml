@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc970344-989d-404e-bba0-77011c61b8bd" name="Changes" comment="Add Button Loading">
-      <change afterPath="$PROJECT_DIR$/.idea/esprit-ras-robots.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/src/components/Buttons/PaymentButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/src/components/Buttons/PresenceButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/src/actions/team-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/actions/team-actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/src/components/Signin/Form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/components/Signin/Form.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/src/components/Tables/TableTeams.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/components/Tables/TableTeams.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/components/Home/Challenges/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/website/components/Home/Challenges/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/components/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/website/components/Input.js" afterDir="false" />
-    </list>
+    <list default="true" id="bc970344-989d-404e-bba0-77011c61b8bd" name="Changes" comment="Add Fighter" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,32 +16,34 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2bvMuv7O4ZFYYAW9Clwxq24rYA1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "nodejs_package_manager_path": "npm",
-    "npm.Server.executor": "Run",
-    "npm.Website.executor": "Run",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Server.executor&quot;: &quot;Run&quot;,
+    &quot;npm.Website.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="npm.Server">
     <configuration name="Dashboard" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/dashboard/package.json" />
@@ -100,8 +91,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1707091326359</updated>
-      <workItem from="1707091328873" duration="280000" />
+      <workItem from="1707091328873" duration="611000" />
     </task>
+    <task id="LOCAL-00001" summary="Add Button Loading">
+      <option name="closed" value="true" />
+      <created>1707091742980</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707091742980</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add Fighter">
+      <option name="closed" value="true" />
+      <created>1707091755465</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707091755465</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +117,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Button Loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Button Loading" />
+    <MESSAGE value="Add Fighter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Fighter" />
   </component>
 </project>

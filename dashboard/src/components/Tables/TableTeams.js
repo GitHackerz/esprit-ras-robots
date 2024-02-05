@@ -1,17 +1,14 @@
 import EditTeamButton from '@/components/Buttons/EditTeamButton'
 import { DeleteButton } from '@/components/Buttons/DeleteButton'
-import {
-    changeTeamPaymentStatus,
-    changeTeamPresenceStatus,
-    deleteTeam,
-    getTeams
-} from '@/actions/team-actions'
-import { Button, Input } from '@nextui-org/react'
+import { deleteTeam, getTeams } from '@/actions/team-actions'
+import { Button } from '@nextui-org/react'
 import { getUserToken } from '@/utils/serverUtils'
+import PresenceButton from '@/components/Buttons/PresenceButton'
+import PaymentButton from '@/components/Buttons/PaymentButton'
 
 const TableTeams = async () => {
     const data = await getTeams()
-    const { user, token } = await getUserToken()
+    const { user } = await getUserToken()
     return (
         <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
             <div className="py-6 px-4 md:px-6 xl:px-7.5 inline-flex items-center justify-between w-full">
@@ -74,60 +71,10 @@ const TableTeams = async () => {
                                         <p className="text-sm">{team.club}</p>
                                     </td>
                                     <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
-                                        <form action={changeTeamPaymentStatus}>
-                                            <Input
-                                                name="id"
-                                                value={team._id}
-                                                hidden
-                                                className="hidden"
-                                            />
-                                            <Input
-                                                name="isPaid"
-                                                value={team.isPaid}
-                                                hidden
-                                                className="hidden"
-                                            />
-                                            <Button
-                                                type="submit"
-                                                className={`inline-flex rounded-full bg-opacity-10 py-1 px-3 text-sm font-medium ${
-                                                    team.isPaid
-                                                        ? 'text-success bg-success'
-                                                        : 'text-danger bg-danger'
-                                                }`}
-                                            >
-                                                {team.isPaid
-                                                    ? 'Paid'
-                                                    : 'Unpaid'}
-                                            </Button>
-                                        </form>
+                                        <PaymentButton team={team} />
                                     </td>
                                     <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
-                                        <form action={changeTeamPresenceStatus}>
-                                            <Input
-                                                name="id"
-                                                value={team._id}
-                                                hidden
-                                                className="hidden"
-                                            />
-                                            <Input
-                                                name="isPresent"
-                                                value={team.isPresent}
-                                                hidden
-                                                className="hidden"
-                                            />
-                                            <Button
-                                                type="submit"
-                                                className={`inline-flex rounded-full bg-opacity-10 py-1 px-3 text-sm font-medium ${
-                                                    team.isPresent
-                                                        ? 'text-success bg-success'
-                                                        : 'text-danger bg-danger'
-                                                }`}
-                                            >
-                                                {team.isPresent
-                                                    ? 'Present'
-                                                    : 'Absent'}
-                                            </Button>
-                                        </form>
+                                        <PresenceButton team={team} />
                                     </td>
                                     {user?.isAdmin && (
                                         <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">

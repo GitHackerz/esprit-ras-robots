@@ -1,114 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc1a938e-771e-430a-88c5-1bc73686d5b3" name="Changes" comment="update server dependencies">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/esprit-ras-robots.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.idea/esprit-ras-robots-server.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/team.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/team.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/team.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/team.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/.idea/discord.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/.idea/esprit-ras-robots-website.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/.idea/jsLinters/eslint.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/.idea/vcs.xml" beforeDir="false" />
+    <list default="true" id="bc970344-989d-404e-bba0-77011c61b8bd" name="Changes" comment="Add Button Loading">
+      <change afterPath="$PROJECT_DIR$/.idea/esprit-ras-robots.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/src/components/Buttons/PaymentButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/src/components/Buttons/PresenceButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/actions/team-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/actions/team-actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/components/Signin/Form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/components/Signin/Form.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/src/components/Tables/TableTeams.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/components/Tables/TableTeams.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/components/Home/Challenges/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/website/components/Home/Challenges/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/components/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/website/components/Input.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="ROOT_SYNC" value="SYNC" />
-  </component>
-  <component name="GithubProjectSettings">
-    <option name="branchProtectionPatterns">
-      <list>
-        <option value="main" />
-      </list>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
-}</component>
-  <component name="ProjectId" id="2bY3hV7HM3CO6JHzC12rslLUfVJ" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2bvMuv7O4ZFYYAW9Clwxq24rYA1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Node.js.actions.js.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "javascript.nodejs.core.library.configured.version": "20.10.0",
-    "javascript.nodejs.core.library.typings.version": "20.10.8",
-    "last_opened_file_path": "C:/MyFiles/IEEE/Dev/esprit-ras-robots/dashboard/src/app/(dashboard)",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "npm.Dashboard.executor": "Run",
     "npm.Server.executor": "Run",
-    "npm.start.executor": "Run",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.1.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external"
+    "npm.Website.executor": "Run",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\MyFiles\IEEE\Dev\esprit-ras-robots\dashboard\src\app\(dashboard)" />
-      <recent name="C:\MyFiles\IEEE\Dev\esprit-ras-robots\dashboard\src\components\Buttons" />
-      <recent name="C:\MyFiles\IEEE\Dev\esprit-ras-robots\dashboard\src\components\Modals" />
-      <recent name="C:\MyFiles\IEEE\Dev\esprit-ras-robots\dashboard" />
-      <recent name="C:\MyFiles\IEEE\Dev\esprit-ras-robots\dashboard\components\Buttons" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\MyFiles\IEEE\Dev\esprit-ras-robots\website" />
-      <recent name="C:\MyFiles\IEEE\Dev\esprit-ras-robots\website\public\assets\challenges" />
-    </key>
-  </component>
-  <component name="RunManager" selected="npm.Dashboard">
+  <component name="RunManager" selected="npm.Server">
     <configuration name="Dashboard" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/dashboard/package.json" />
       <command value="run" />
@@ -129,6 +74,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="Website" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/website/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -140,115 +95,20 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cc1a938e-771e-430a-88c5-1bc73686d5b3" name="Changes" comment="" />
-      <created>1706378303940</created>
+      <changelist id="bc970344-989d-404e-bba0-77011c61b8bd" name="Changes" comment="" />
+      <created>1707091326359</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1706378303940</updated>
-      <workItem from="1706378304984" duration="1928000" />
-      <workItem from="1706382183988" duration="18742000" />
-      <workItem from="1706443836333" duration="610000" />
-      <workItem from="1706446216852" duration="1192000" />
-      <workItem from="1706447537418" duration="187000" />
-      <workItem from="1706451677923" duration="1826000" />
-      <workItem from="1706468902505" duration="2137000" />
-      <workItem from="1706475300030" duration="2179000" />
-      <workItem from="1706619555955" duration="2000" />
-      <workItem from="1706976812229" duration="170000" />
-      <workItem from="1707057144344" duration="11445000" />
-      <workItem from="1707082679633" duration="2712000" />
-      <workItem from="1707085430913" duration="3776000" />
+      <updated>1707091326359</updated>
+      <workItem from="1707091328873" duration="280000" />
     </task>
-    <task id="LOCAL-00001" summary="fix eslint">
-      <option name="closed" value="true" />
-      <created>1706378366923</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1706378366923</updated>
-    </task>
-    <task id="LOCAL-00002" summary="deploy to iis">
-      <option name="closed" value="true" />
-      <created>1706447598065</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1706447598065</updated>
-    </task>
-    <task id="LOCAL-00003" summary="fix mobile version">
-      <option name="closed" value="true" />
-      <created>1706470530580</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1706470530580</updated>
-    </task>
-    <task id="LOCAL-00004" summary="update mail">
-      <option name="closed" value="true" />
-      <created>1706476069026</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1706476069026</updated>
-    </task>
-    <task id="LOCAL-00005" summary="update about us">
-      <option name="closed" value="true" />
-      <created>1706476598533</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1706476598533</updated>
-    </task>
-    <task id="LOCAL-00006" summary="update about us">
-      <option name="closed" value="true" />
-      <created>1706476784502</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1706476784502</updated>
-    </task>
-    <task id="LOCAL-00007" summary="change to JS, fix AUTH, and optimize code">
-      <option name="closed" value="true" />
-      <created>1707083484051</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1707083484051</updated>
-    </task>
-    <task id="LOCAL-00008" summary="add loading and optimize cookies">
-      <option name="closed" value="true" />
-      <created>1707085383136</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1707085383136</updated>
-    </task>
-    <task id="LOCAL-00009" summary="update server dependencies">
-      <option name="closed" value="true" />
-      <created>1707085808844</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1707085808844</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix eslint" />
-    <MESSAGE value="fix responsive and content" />
-    <MESSAGE value="some updates" />
-    <MESSAGE value="deploy to iis" />
-    <MESSAGE value="fix mobile version" />
-    <MESSAGE value="update mail" />
-    <MESSAGE value="update about us" />
-    <MESSAGE value="change to JS, fix AUTH, and optimize code" />
-    <MESSAGE value="add loading and optimize cookies" />
-    <MESSAGE value="update server dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="update server dependencies" />
+    <MESSAGE value="Add Button Loading" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Button Loading" />
   </component>
 </project>

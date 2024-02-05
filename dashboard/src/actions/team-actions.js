@@ -70,7 +70,7 @@ export async function updateTeam(id, data) {
     }
 }
 
-export const changeTeamPaymentStatus = async formData => {
+export const changeTeamPaymentStatus = async (prev, formData) => {
     try {
         const id = formData.get('id')
         const isPaid = formData.get('isPaid')
@@ -85,12 +85,19 @@ export const changeTeamPaymentStatus = async formData => {
             }
         )
         revalidatePath('/teams')
+        return {
+            success: true
+        }
     } catch (err) {
         console.error(err?.response?.data?.error)
+        return {
+            success: false,
+            error: err?.response?.data?.error || err.message
+        }
     }
 }
 
-export const changeTeamPresenceStatus = async formData => {
+export const changeTeamPresenceStatus = async (prevState, formData) => {
     try {
         const id = formData.get('id')
         const isPresent = formData.get('isPresent')
@@ -105,7 +112,15 @@ export const changeTeamPresenceStatus = async formData => {
             }
         )
         revalidatePath('/teams')
+        return {
+            success: true
+        }
     } catch (err) {
         console.error(err?.response?.data?.error)
+
+        return {
+            success: false,
+            error: err?.response?.data?.error || err.message
+        }
     }
 }

@@ -1,13 +1,30 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { useFormState } from 'react-dom'
+import { useFormState, useFormStatus } from 'react-dom'
 import { signin } from '@/actions/user-actions'
 import { CiMail } from 'react-icons/ci'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import Alert from '@/components/Alert'
-import { redirect, useRouter } from 'next/navigation'
-import { setUserToken } from '@/utils/serverUtils'
+import { useRouter } from 'next/navigation'
+import { Button } from '@nextui-org/react'
+
+const SubmitButton = () => {
+    const { pending } = useFormStatus()
+    return (
+        <div className="mb-5">
+            <Button
+                type="submit"
+                value="Sign In"
+                className="w-full bg-primary py-7 text-white transition hover:bg-opacity-90"
+                radius="lg"
+                isLoading={pending}
+            >
+                Sign In
+            </Button>
+        </div>
+    )
+}
 
 const SigninForm = () => {
     // @ts-ignore
@@ -71,13 +88,7 @@ const SigninForm = () => {
                 </div>
             </div>
 
-            <div className="mb-5">
-                <input
-                    type="submit"
-                    value="Sign In"
-                    className="w-full cursor-pointer rounded-lg border border-primary bg-primary p-4 text-white transition hover:bg-opacity-90"
-                />
-            </div>
+            <SubmitButton />
             {isError && (
                 <Alert
                     message={state.error}

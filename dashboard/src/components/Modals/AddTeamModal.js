@@ -12,10 +12,10 @@ import {
 import { FaLock, FaUser } from 'react-icons/fa'
 import { IoMail } from 'react-icons/io5'
 import { useState } from 'react'
-import { AddUser } from '@/actions/user-actions'
+import { AddTeam } from '@/actions/team-actions'
 
-export default function AddUserModal({
-    user,
+export default function AddTeamModal({
+    team,
     isOpen,
     onOpenChange,
     onClose,
@@ -23,21 +23,26 @@ export default function AddUserModal({
     setIsError,
     setError
 }) {
-    const [_id, setId] = useState(user.id)
-    const [name, setName] = useState(user.name || '')
-    const [email, setEmail] = useState(user.email || '')
-    const [password, setPassword] = useState('')
-    const [role, setRole] = useState(
-        new Set([user.isAdmin ? 'Admin' : 'Organizing Committee'])
-    )
+    const [name, setName] = useState(team.name || '')
+    const [email, setEmail] = useState(team.email || '')
+    const [challenge, setChallenge] = useState(new Set([team.challenge]))
+    const [establishment, setEstablishment] = useState(team.establishment || '')
+    const [club, setClub] = useState(team.club || '')
+    const [teams, setTeams] = useState([{
+        email: "",
+        name: "",
+        phone: ""
+
+        
+    }])
 
     const handleSubmit = async () => {
-        const { success, error } = await AddUser({
-            _id,
+        const { success, error } = await AddTeam({
             name,
             email,
-            password,
-            isAdmin: role.currentKey === 'Admin'
+            challenge: challenge.currentKey,
+            establishment,
+            club
         })
         if (success) {
             setIsSuccess(true)
@@ -65,17 +70,6 @@ export default function AddUserModal({
                         </ModalHeader>
                         <ModalBody>
                             <Input
-                                endContent={
-                                    <IoMail className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                                }
-                                label="ID"
-                                type="number"
-                                value={_id}
-                                onValueChange={setId}
-                                placeholder="Enter User Email"
-                                variant="bordered"
-                            />
-                            <Input
                                 autoFocus
                                 endContent={
                                     <FaUser className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
@@ -101,29 +95,46 @@ export default function AddUserModal({
                                 endContent={
                                     <FaLock className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
                                 }
-                                label="Password"
-                                type="password"
-                                value={password}
-                                onValueChange={setPassword}
-                                placeholder="Enter User Password"
+                                label="Establishment"
+                                value={establishment}
+                                onValueChange={setEstablishment}
+                                placeholder="Enter Team Establishment"
+                                variant="bordered"
+                            />
+                            <Input
+                                endContent={
+                                    <FaLock className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
+                                }
+                                label="Club"
+                                value={club}
+                                onValueChange={setClub}
+                                placeholder="Enter Team Club"
                                 variant="bordered"
                             />
                             <Select
-                                label="User Role"
+                                label="Team Challenge"
                                 name="role"
                                 variant="bordered"
-                                selectedKeys={role}
-                                className="max-w-lg"
-                                onSelectionChange={setRole}
+                                selectedKeys={challenge}
+                                onSelectionChange={setChallenge}
                             >
                                 <SelectItem
-                                    key={'Organizing Committee'}
-                                    value={'Organizing Committee'}
+                                    key={'Autonomous'}
+                                    value={'Autonomous'}
                                 >
-                                    Organizing Committee
+                                    Autonomous
                                 </SelectItem>
-                                <SelectItem key={'Admin'} value={'Admin'}>
-                                    Admin
+                                <SelectItem
+                                    key={'All Terrain'}
+                                    value={'All Terrain'}
+                                >
+                                    All Terrain
+                                </SelectItem>
+                                <SelectItem key={'Fighter'} value={'Fighter'}>
+                                    Fighter
+                                </SelectItem>
+                                <SelectItem key={'Junior'} value={'Junior'}>
+                                    Junior
                                 </SelectItem>
                             </Select>
                         </ModalBody>
@@ -147,12 +158,18 @@ export default function AddUserModal({
 }
 
 //props
-AddUserModal.defaultProps = {
-    user: {
-        name: '',
+AddTeamModal.defaultProps = {
+    team: {
+        name: 'John Doe',
         email: '',
-        isAdmin: false
+        challenge: new Set(),
+        establishment: '',
+        club: ''
     },
     isOpen: false,
-    onOpenChange: () => { }
+    onOpenChange: () => {},
+    onClose: () => {},
+    setIsSuccess: () => {},
+    setIsError: () => {},
+    setError: () => {}
 }

@@ -12,7 +12,7 @@ export default function EditTeamButton() {
     const [isSuccess, setIsSuccess] = useState(false)
     const [isError, setIsError] = useState(false)
     const [error, setError] = useState()
-
+    const [scrollBehavior, setScrollBehavior] = React.useState("inside");
     return (
         <div>
             <Button
@@ -29,6 +29,7 @@ export default function EditTeamButton() {
                 setIsSuccess={setIsSuccess}
                 setIsError={setIsError}
                 setError={setError}
+                scrollBehavior={scrollBehavior}
             />
             {isError && (
                 <Alert

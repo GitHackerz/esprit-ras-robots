@@ -8,8 +8,12 @@ import {
     ModalFooter,
     ModalHeader,
     Select,
-    SelectItem
+    SelectItem,
+    ScrollShadow,
+    scrollShadow
 } from '@nextui-org/react'
+import React from "react";
+
 import { FaLock, FaPhone, FaUser } from 'react-icons/fa'
 import { IoMail } from 'react-icons/io5'
 import { useState } from 'react'
@@ -25,6 +29,7 @@ export default function AddTeamModal({
     setError
 }) {
     const colors = ["success", "warning", "danger"]; // Add more colors as needed
+    const [scrollBehavior, setScrollBehavior] = React.useState("inside");
 
     const [numberValue, setNumberValue] = useState(1);
     const [name, setName] = useState(team.name || '')
@@ -81,13 +86,15 @@ export default function AddTeamModal({
     }
 
     return (
-        <Modal
+        
+        <Modal  
             isOpen={isOpen}
             onOpenChange={onOpenChange}
             backdrop="blur"
             className="dark:text-white dark:border-white dark:bg-boxdark"
+            scrollBehavior={scrollBehavior}
         >
-            <ModalContent>
+            <ModalContent >
                 {onClose => (
                     <>
                         <ModalHeader className="flex flex-col gap-1">

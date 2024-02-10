@@ -82,7 +82,7 @@ export const emailRegistrationHtml = (team) => {
         <p><strong>Important: </strong> Reply to this email by sending a receipt/capture of the payment to <span style="color: #4472c4; font-size: large"><strong>confirm your registration.</strong></span></p>
         
         <div>
-            <p>Remember, the checkered flag waves on the payment deadline: <span style="color: #ff0000"><strong>11th February 2024, at 11:59 PM </strong></span>. </p>
+            <p>Remember, the checkered flag waves on the payment deadline: <span style="color: #ff0000"><strong>18th February 2024, at 11:59 PM </strong></span>. </p>
             <p>Our pit crew at ESPRIT RAS ROBOTS OC extends heartfelt gratitude for joining the race, and we wish you pole position success. For any additional information, contact us at <strong><a href="mailto:contact.espritrasrobots@gmail.com">contact.espritrasrobots@gmail.com</a></strong>.</p>
             <p>Get ready to burn rubber and showcase your talent on the Formula 1-inspired track. We can't wait to see you at the starting line.<br /><br /></p>
         </div>

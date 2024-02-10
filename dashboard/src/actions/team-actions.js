@@ -69,6 +69,30 @@ export async function updateTeam(id, data) {
         }
     }
 }
+export async function AddTeam(data) {
+    try {
+        const { token } = await getUserToken()
+        const res = await axios.post(
+            `${process.env.API_URL}/teams`,
+            data,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        )
+        revalidatePath('/teams')
+        return {
+            success: true,
+            user: res.data
+        }
+    } catch (err) {
+        return {
+            success: false,
+            error: err?.response?.data?.error || err.message
+        }
+    }
+}
 
 export const changeTeamPaymentStatus = async (prev, formData) => {
     try {

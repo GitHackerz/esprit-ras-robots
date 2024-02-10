@@ -9,7 +9,7 @@ import {
     Select,
     SelectItem
 } from '@nextui-org/react'
-import { FaLock, FaUser } from 'react-icons/fa'
+import { FaLock, FaPhone, FaUser } from 'react-icons/fa'
 import { IoMail } from 'react-icons/io5'
 import { useState } from 'react'
 import { AddTeam } from '@/actions/team-actions'
@@ -23,26 +23,48 @@ export default function AddTeamModal({
     setIsError,
     setError
 }) {
+    const [numberValue, setNumberValue] = useState(1);
     const [name, setName] = useState(team.name || '')
     const [email, setEmail] = useState(team.email || '')
     const [challenge, setChallenge] = useState(new Set([team.challenge]))
     const [establishment, setEstablishment] = useState(team.establishment || '')
     const [club, setClub] = useState(team.club || '')
-    const [teams, setTeams] = useState([{
-        email: "",
-        name: "",
-        phone: ""
+    const [teams, setTeams] = useState([
+        {
+            mail: '',
+            name: '',
+            phone: ''
+        },
+        {
+            mail: '',
+            name: '',
+            phone: ''
+        },
+        {
+            mail: '',
+            name: '',
+            phone: ''
+        }
+    ]);
 
-        
-    }])
-
+    const removeEmptyTeams = () => {
+        const nonEmptyTeams = teams.filter(team => team.mail !== '' || team.name !== '' || team.phone !== '');
+        setTeams(nonEmptyTeams);
+    };
+    
     const handleSubmit = async () => {
+        removeEmptyTeams();
+        await new Promise(resolve => setTimeout(resolve, 0)); 
         const { success, error } = await AddTeam({
             name,
-            email,
+            email : teams[0].mail,
             challenge: challenge.currentKey,
             establishment,
-            club
+            club,
+            teams,
+            score : 0,
+            isPaid : false,
+            isPresent : false  
         })
         if (success) {
             setIsSuccess(true)
@@ -66,7 +88,7 @@ export default function AddTeamModal({
                 {onClose => (
                     <>
                         <ModalHeader className="flex flex-col gap-1">
-                            Edit User
+                            Add Team
                         </ModalHeader>
                         <ModalBody>
                             <Input
@@ -77,20 +99,10 @@ export default function AddTeamModal({
                                 label="Name"
                                 value={name}
                                 onValueChange={setName}
-                                placeholder="Enter User Name"
+                                placeholder="Enter Team Name"
                                 variant="bordered"
                             />
-                            <Input
-                                endContent={
-                                    <IoMail className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                                }
-                                label="Email"
-                                type="email"
-                                value={email}
-                                onValueChange={setEmail}
-                                placeholder="Enter User Email"
-                                variant="bordered"
-                            />
+
                             <Input
                                 endContent={
                                     <FaLock className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
@@ -111,6 +123,7 @@ export default function AddTeamModal({
                                 placeholder="Enter Team Club"
                                 variant="bordered"
                             />
+
                             <Select
                                 label="Team Challenge"
                                 name="role"
@@ -137,6 +150,59 @@ export default function AddTeamModal({
                                     Junior
                                 </SelectItem>
                             </Select>
+
+                            <Input
+                                label="Number of Team members"
+                                type="number"
+                                min={1}
+                                max={3}
+                                value={numberValue}
+                                onValueChange={setNumberValue}
+                                variant="bordered"
+                            />
+
+                            {Array.from({ length: numberValue }, (_, index) => (
+                                <div className='justify-between w-full' key={index}>
+                                    <Input
+                                        label={`Team Member ${index + 1}`}
+                                        type="text"
+                                        value={teams[index].name}
+                                        onValueChange={(value) => {
+                                            const newTeams = [...teams];
+                                            newTeams[index].name = value;
+                                            setTeams(newTeams);
+                                        }}
+                                        placeholder={`Enter Team Member ${index + 1} Name`}
+                                        variant="bordered"
+                                    />
+                                    <Input
+                                        endContent={<IoMail className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />}
+                                        label={`Team Member ${index + 1} Email`}
+                                        type="email"
+                                        value={teams[index].mail}
+                                        onValueChange={(value) => {
+                                            const newTeams = [...teams];
+                                            newTeams[index].mail = value;
+                                            setTeams(newTeams);
+                                        }}
+                                        placeholder={`Enter User ${index + 1} Email`}
+                                        variant="bordered"
+                                    />
+                                    <Input
+                                        endContent={<FaPhone className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />}
+                                        label="Phone Number"
+                                        type="tel"
+                                        value={teams[index].phone}
+                                        onValueChange={(value) => {
+                                            const newTeams = [...teams];
+                                            newTeams[index].phone = value;
+                                            setTeams(newTeams);
+                                        }}
+                                        placeholder="Enter Phone Number"
+                                        variant="bordered"
+                                    />
+                                </div>
+                            ))}
                         </ModalBody>
                         <ModalFooter>
                             <Button
@@ -147,29 +213,30 @@ export default function AddTeamModal({
                                 Close
                             </Button>
                             <Button onPress={handleSubmit} color="primary">
-                                Edit
+                                ADD
                             </Button>
                         </ModalFooter>
                     </>
                 )}
             </ModalContent>
         </Modal>
+
     )
 }
 
 //props
 AddTeamModal.defaultProps = {
     team: {
-        name: 'John Doe',
+        name: '',
         email: '',
         challenge: new Set(),
         establishment: '',
-        club: ''
+        club: '',
     },
     isOpen: false,
-    onOpenChange: () => {},
-    onClose: () => {},
-    setIsSuccess: () => {},
-    setIsError: () => {},
-    setError: () => {}
+    onOpenChange: () => { },
+    onClose: () => { },
+    setIsSuccess: () => { },
+    setIsError: () => { },
+    setError: () => { }
 }

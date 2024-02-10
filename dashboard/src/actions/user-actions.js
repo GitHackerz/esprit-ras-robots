@@ -112,6 +112,33 @@ export async function updateUser(id, data) {
     }
 }
 
+export async function AddUser(data) {
+    try {
+        const { token } = await getUserToken()
+        if (data.password === '') {
+            delete data.password
+        }
+        const res = await axios.post(
+            `${process.env.API_URL}/users/`,
+            data,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        )
+        revalidatePath('/users')
+        return {
+            success: true,
+            user: res.data
+        }
+    } catch (err) {
+        return {
+            success: false,
+            error: err?.response?.data?.error || err.message
+        }
+    }
+}
 // export async function refreshToken() {
 //     try {
 //         const { token } = await getUserToken()

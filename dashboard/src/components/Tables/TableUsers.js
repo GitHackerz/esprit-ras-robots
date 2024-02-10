@@ -1,6 +1,7 @@
 import { deleteUser, getUsers } from '@/actions/user-actions'
 import { DeleteButton } from '@/components/Buttons/DeleteButton'
 import EditUserButton from '@/components/Buttons/EditUserButton'
+import AddUserButton from '@/components/Buttons/AddUserButton'
 import { Button } from '@nextui-org/react'
 
 const TableUsers = async () => {
@@ -13,9 +14,7 @@ const TableUsers = async () => {
                     List Users
                 </h4>
                 <div>
-                    <Button className="text-blue-900 hover:text-white bg-transparent hover:bg-blue-900 border border-blue-900">
-                        Add User
-                    </Button>
+                    <AddUserButton/>
                 </div>
             </div>
             <div className="max-w-full overflow-x-auto">
@@ -55,11 +54,10 @@ const TableUsers = async () => {
 
                                     <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                                         <p
-                                            className={`inline-flex rounded-full bg-opacity-10 py-1 px-3 text-sm font-medium ${
-                                                user.isAdmin
+                                            className={`inline-flex rounded-full bg-opacity-10 py-1 px-3 text-sm font-medium ${user.isAdmin
                                                     ? 'text-success bg-success'
                                                     : 'text-warning bg-warning'
-                                            }`}
+                                                }`}
                                         >
                                             {user.isAdmin ? 'Admin' : 'User'}
                                         </p>

@@ -1,5 +1,6 @@
 import {
     Button,
+    Divider,
     Input,
     Modal,
     ModalBody,
@@ -23,6 +24,8 @@ export default function AddTeamModal({
     setIsError,
     setError
 }) {
+    const colors = ["success", "warning", "danger"]; // Add more colors as needed
+
     const [numberValue, setNumberValue] = useState(1);
     const [name, setName] = useState(team.name || '')
     const [email, setEmail] = useState(team.email || '')
@@ -150,8 +153,8 @@ export default function AddTeamModal({
                                     Junior
                                 </SelectItem>
                             </Select>
-
-                            <Input
+                                <Divider></Divider>
+                            <Input className='mt-1'
                                 label="Number of Team members"
                                 type="number"
                                 min={1}
@@ -162,8 +165,8 @@ export default function AddTeamModal({
                             />
 
                             {Array.from({ length: numberValue }, (_, index) => (
-                                <div className='justify-between w-full' key={index}>
-                                    <Input
+                                <div className={`justify-between w-full `} key={index}>
+                                    <Input color={`${colors[index % colors.length]}`}
                                         label={`Team Member ${index + 1}`}
                                         type="text"
                                         value={teams[index].name}
@@ -175,7 +178,7 @@ export default function AddTeamModal({
                                         placeholder={`Enter Team Member ${index + 1} Name`}
                                         variant="bordered"
                                     />
-                                    <Input
+                                    <Input color={`${colors[index % colors.length]}`}
                                         endContent={<IoMail className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />}
                                         label={`Team Member ${index + 1} Email`}
                                         type="email"
@@ -188,7 +191,7 @@ export default function AddTeamModal({
                                         placeholder={`Enter User ${index + 1} Email`}
                                         variant="bordered"
                                     />
-                                    <Input
+                                    <Input color={`${colors[index % colors.length]}`}
                                         endContent={<FaPhone className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />}
                                         label="Phone Number"
                                         type="tel"

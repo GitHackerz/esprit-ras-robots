@@ -17,7 +17,7 @@ const TableTeams = () => {
     useEffect(() => {
         
         const fetchData = async () => {
-            const teamsData = await getTeams(challenge);
+            const teamsData = await getTeams(challenge.currentKey);
             setData(teamsData);
         };
 
@@ -38,7 +38,7 @@ const TableTeams = () => {
                     List Teams
                 </h4>
                 <div className="w-80 justify-between inline-flex" >
-                    <Select label="Team Challenge"  name="role" variant="bordered" selectedKeys={challenge} defaultSelectedKeys={["ALL"]} onSelectionChange={setChallenge}>
+                    <Select label="Team Challenge"  name="role" variant="bordered" defaultSelectedKeys={["ALL"]} onSelectionChange={setChallenge}>
                         <SelectItem key={'ALL'} value={'ALL'} >All</SelectItem>
                         <SelectItem key={'Autonomous'} value={'Autonomous'}>Autonomous</SelectItem>
                         <SelectItem key={'All Terrain'} value={'All Terrain'}>All Terrain</SelectItem>

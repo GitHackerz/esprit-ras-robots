@@ -24,7 +24,6 @@ export const emailRegistrationHtml = (team) => {
         <div>
             <p>Dear Formula 1 enthusiast,</p>
             <p>Start your engine because your registration for <strong>${team.name}</strong> has zoomed into our inbox and we are delighted to welcome you aboard for the second edition of our event, putting you in the driver&rsquo;s seat for a thrilling experience.</p>
-            <p>To confirm your registration, shift gears and send an email to <strong><a href="mailto:contact.espritrasrobots@gmail.com">contact.espritrasrobots@gmail.com</a></strong> with the following details:</p>
         </div>
         <h2>Team information </h2>
         <ul>
@@ -40,20 +39,20 @@ export const emailRegistrationHtml = (team) => {
             <li><strong>Phone Number:</strong> ${team.teams[0].phone}</li>
         </ul>
         ${team.teams[1] ? `
-            <h2>Team member's information </h2>
-            <ul>
-                <li><strong>Full Name:</strong> ${team.teams[1].name}</li>
-                <li><strong>Email:</strong> <a href="mailto:${team.teams[1].email}">${team.teams[1].email}</a></li>
-                <li><strong>Phone Number:</strong> ${team.teams[1].phone}</li>
-            </ul>
+        <h2>Team member's information </h2>
+        <ul>
+            <li><strong>Full Name:</strong> ${team.teams[1].name}</li>
+            <li><strong>Email:</strong> <a href="mailto:${team.teams[1].email}">${team.teams[1].email}</a></li>
+            <li><strong>Phone Number:</strong> ${team.teams[1].phone}</li>
+        </ul>
         ` : ''}
         ${team.teams[2] ? `
-            <h2>Team member's information </h2>
-            <ul>
-                <li><strong>Full Name:</strong> ${team.teams[2].name}</li>
-                <li><strong>Email:</strong> <a href="mailto:${team.teams[2].email}">${team.teams[2].email}</a></li>
-                <li><strong>Phone Number:</strong> ${team.teams[2].phone}</li>
-            </ul>
+        <h2>Team member's information </h2>
+        <ul>
+            <li><strong>Full Name:</strong> ${team.teams[2].name}</li>
+            <li><strong>Email:</strong> <a href="mailto:${team.teams[2].email}">${team.teams[2].email}</a></li>
+            <li><strong>Phone Number:</strong> ${team.teams[2].phone}</li>
+        </ul>
         ` : ''}
         <br/>
         <h4>Now let's navigate through the registration fees for each race category:</h4>
@@ -67,22 +66,23 @@ export const emailRegistrationHtml = (team) => {
         <p>To make a pit stop for payment, follow the procedure below:</p>
         <ul>
             <li>
-                <strong>Postal Transfer: </strong> "5359 4014 2011 7950" in the name of <strong>"Omaima Nasser"</strong> 
+                <strong>Postal Transfer: </strong> "5359 4014 2011 7950" in the name of <strong>"Omaima Nasser"</strong>
             </li>
             <li>
-                <strong>Postal Transfer: </strong> "4742 0140 4440 6151" in the name of <strong>"Aziz Hbaili"</strong> 
+                <strong>Postal Transfer: </strong> "4742 0140 4440 6151" in the name of <strong>"Aziz Hbaili"</strong>
             </li>
             <li>
                 <strong>Postal Transfer: </strong> "5359 4014 3736 4876" in the name of <strong>"Mohamed Habib Allah Bibani"</strong>
             </li>
             <li>
-                Bank Transfer RIB: <strong>25051000000095710133</strong> ADAM ASSIDI (Zitouna Bank)
+                <strong>Bank Transfer RIB: </strong> 25051000000095710133 ADAM ASSIDI (Zitouna Bank)
             </li>
         </ul>
-        ===> Include a photo of the transfer receipt/capture in your email. For any information <strong>95 246 737</strong><br />
+        
+        <p><strong>Important: </strong> Reply to this email by sending a receipt/capture of the payment to <span style="color: #4472c4; font-size: large"><strong>confirm your registration.</strong></span></p>
         
         <div>
-            <p>Remember, the checkered flag waves on the payment deadline: <span style="color: #ff0000"><strong>11th February 2024, at 11:59 PM </strong></span>. </p>
+            <p>Remember, the checkered flag waves on the payment deadline: <span style="color: #ff0000"><strong>18th February 2024, at 11:59 PM </strong></span>. </p>
             <p>Our pit crew at ESPRIT RAS ROBOTS OC extends heartfelt gratitude for joining the race, and we wish you pole position success. For any additional information, contact us at <strong><a href="mailto:contact.espritrasrobots@gmail.com">contact.espritrasrobots@gmail.com</a></strong>.</p>
             <p>Get ready to burn rubber and showcase your talent on the Formula 1-inspired track. We can't wait to see you at the starting line.<br /><br /></p>
         </div>

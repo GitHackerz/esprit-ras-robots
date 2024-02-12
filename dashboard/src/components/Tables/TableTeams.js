@@ -1,4 +1,5 @@
 import EditTeamButton from '@/components/Buttons/EditTeamButton'
+import AddTeamButton from '@/components/Buttons/AddTeamButton'
 import { DeleteButton } from '@/components/Buttons/DeleteButton'
 import { deleteTeam, getTeams } from '@/actions/team-actions'
 import { Button } from '@nextui-org/react'
@@ -17,9 +18,7 @@ const TableTeams = async () => {
                 </h4>
                 <div>
                     {user?.isAdmin && (
-                        <Button className="text-blue-900 hover:text-white bg-transparent hover:bg-blue-900 border border-blue-900">
-                            Add Team
-                        </Button>
+                        <AddTeamButton/>
                     )}
                 </div>
             </div>

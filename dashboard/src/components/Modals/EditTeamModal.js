@@ -30,7 +30,7 @@ export default function EditTeamModal({
     const [establishment, setEstablishment] = useState(team.establishment || '')
     const [club, setClub] = useState(team.club || '')
     const [teams, setTeams] = useState(team.teams)
-    console.log(teams)
+    const [scrollBehavior, setScrollBehavior] = useState("inside");
     const handleSubmit = async () => {
         const { success, error } = await updateTeam(team._id, {
             name,
@@ -61,6 +61,8 @@ export default function EditTeamModal({
             onOpenChange={onOpenChange}
             backdrop="blur"
             className="dark:text-white dark:border-white dark:bg-boxdark"
+            scrollBehavior={scrollBehavior}
+        
         >
             <ModalContent>
                 {onClose => (
@@ -136,8 +138,8 @@ export default function EditTeamModal({
                             </Select>
                             {teams.map((team, index) => (
                                 <div key={index}>
-
-                                    <Input
+                                    <h4>Team Member N°{index+1}</h4>
+                                    <Input className='mb-2 mt-3'
                                         endContent={
                                             <IoMail className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
                                         }
@@ -148,7 +150,7 @@ export default function EditTeamModal({
                                         placeholder="Mail"
                                         variant="bordered"
                                     />
-                                    <Input
+                                    <Input className='mb-2'
                                         endContent={
                                             <FaUser className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
                                         }
@@ -158,7 +160,7 @@ export default function EditTeamModal({
                                         placeholder="Name"
                                         variant="bordered"
                                     />
-                                    <Input
+                                    <Input className='mb-2'
                                     endContent={
                                         <FaPhone className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
                                     }

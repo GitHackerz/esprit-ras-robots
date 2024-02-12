@@ -12,7 +12,7 @@ import {
     ScrollShadow,
     scrollShadow
 } from '@nextui-org/react'
-import React from "react";
+import React from 'react'
 
 import { FaLock, FaPhone, FaUser } from 'react-icons/fa'
 import { IoMail } from 'react-icons/io5'
@@ -28,10 +28,10 @@ export default function AddTeamModal({
     setIsError,
     setError
 }) {
-    const colors = ["success", "warning", "danger"]; // Add more colors as needed
-    const [scrollBehavior, setScrollBehavior] = React.useState("inside");
+    const colors = ['success', 'warning', 'danger'] // Add more colors as needed
+    const [scrollBehavior, setScrollBehavior] = React.useState('inside')
 
-    const [numberValue, setNumberValue] = useState(1);
+    const [numberValue, setNumberValue] = useState(1)
     const [name, setName] = useState(team.name || '')
     const [email, setEmail] = useState(team.email || '')
     const [challenge, setChallenge] = useState(new Set([team.challenge]))
@@ -53,26 +53,28 @@ export default function AddTeamModal({
             name: '',
             phone: ''
         }
-    ]);
+    ])
 
     const removeEmptyTeams = () => {
-        const nonEmptyTeams = teams.filter(team => team.mail !== '' || team.name !== '' || team.phone !== '');
-        setTeams(nonEmptyTeams);
-    };
-    
+        const nonEmptyTeams = teams.filter(
+            team => team.mail !== '' || team.name !== '' || team.phone !== ''
+        )
+        setTeams(nonEmptyTeams)
+    }
+
     const handleSubmit = async () => {
-        removeEmptyTeams();
-        await new Promise(resolve => setTimeout(resolve, 0)); 
+        removeEmptyTeams()
+        await new Promise(resolve => setTimeout(resolve, 0))
         const { success, error } = await AddTeam({
             name,
-            email : teams[0].mail,
+            email: teams[0].mail,
             challenge: challenge.currentKey,
             establishment,
             club,
             teams,
-            score : 0,
-            isPaid : false,
-            isPresent : false  
+            score: 0,
+            isPaid: false,
+            isPresent: false
         })
         if (success) {
             setIsSuccess(true)
@@ -86,15 +88,14 @@ export default function AddTeamModal({
     }
 
     return (
-        
-        <Modal  
+        <Modal
             isOpen={isOpen}
             onOpenChange={onOpenChange}
             backdrop="blur"
             className="dark:text-white dark:border-white dark:bg-boxdark"
             scrollBehavior={scrollBehavior}
         >
-            <ModalContent >
+            <ModalContent>
                 {onClose => (
                     <>
                         <ModalHeader className="flex flex-col gap-1">
@@ -160,8 +161,9 @@ export default function AddTeamModal({
                                     Junior
                                 </SelectItem>
                             </Select>
-                                <Divider></Divider>
-                            <Input className='mt-1'
+                            <Divider></Divider>
+                            <Input
+                                className="mt-1"
                                 label="Number of Team members"
                                 type="number"
                                 min={1}
@@ -172,41 +174,51 @@ export default function AddTeamModal({
                             />
 
                             {Array.from({ length: numberValue }, (_, index) => (
-                                <div className={`justify-between w-full `} key={index}>
-                                    <Input color={`${colors[index % colors.length]}`}
+                                <div
+                                    className={`justify-between w-full `}
+                                    key={index}
+                                >
+                                    <Input
+                                        color={`${colors[index % colors.length]}`}
                                         label={`Team Member ${index + 1}`}
                                         type="text"
                                         value={teams[index].name}
-                                        onValueChange={(value) => {
-                                            const newTeams = [...teams];
-                                            newTeams[index].name = value;
-                                            setTeams(newTeams);
+                                        onValueChange={value => {
+                                            const newTeams = [...teams]
+                                            newTeams[index].name = value
+                                            setTeams(newTeams)
                                         }}
                                         placeholder={`Enter Team Member ${index + 1} Name`}
                                         variant="bordered"
                                     />
-                                    <Input color={`${colors[index % colors.length]}`}
-                                        endContent={<IoMail className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />}
+                                    <Input
+                                        color={`${colors[index % colors.length]}`}
+                                        endContent={
+                                            <IoMail className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                                        }
                                         label={`Team Member ${index + 1} Email`}
                                         type="email"
                                         value={teams[index].mail}
-                                        onValueChange={(value) => {
-                                            const newTeams = [...teams];
-                                            newTeams[index].mail = value;
-                                            setTeams(newTeams);
+                                        onValueChange={value => {
+                                            const newTeams = [...teams]
+                                            newTeams[index].mail = value
+                                            setTeams(newTeams)
                                         }}
                                         placeholder={`Enter User ${index + 1} Email`}
                                         variant="bordered"
                                     />
-                                    <Input color={`${colors[index % colors.length]}`}
-                                        endContent={<FaPhone className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />}
+                                    <Input
+                                        color={`${colors[index % colors.length]}`}
+                                        endContent={
+                                            <FaPhone className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                                        }
                                         label="Phone Number"
                                         type="tel"
                                         value={teams[index].phone}
-                                        onValueChange={(value) => {
-                                            const newTeams = [...teams];
-                                            newTeams[index].phone = value;
-                                            setTeams(newTeams);
+                                        onValueChange={value => {
+                                            const newTeams = [...teams]
+                                            newTeams[index].phone = value
+                                            setTeams(newTeams)
                                         }}
                                         placeholder="Enter Phone Number"
                                         variant="bordered"
@@ -230,7 +242,6 @@ export default function AddTeamModal({
                 )}
             </ModalContent>
         </Modal>
-
     )
 }
 
@@ -241,12 +252,12 @@ AddTeamModal.defaultProps = {
         email: '',
         challenge: new Set(),
         establishment: '',
-        club: '',
+        club: ''
     },
     isOpen: false,
-    onOpenChange: () => { },
-    onClose: () => { },
-    setIsSuccess: () => { },
-    setIsError: () => { },
-    setError: () => { }
+    onOpenChange: () => {},
+    onClose: () => {},
+    setIsSuccess: () => {},
+    setIsError: () => {},
+    setError: () => {}
 }

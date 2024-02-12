@@ -136,7 +136,7 @@ export default function AddUserModal({
                                 Close
                             </Button>
                             <Button onPress={handleSubmit} color="primary">
-                                Edit
+                                Add
                             </Button>
                         </ModalFooter>
                     </>
@@ -154,5 +154,5 @@ AddUserModal.defaultProps = {
         isAdmin: false
     },
     isOpen: false,
-    onOpenChange: () => { }
+    onOpenChange: () => {}
 }

@@ -3,8 +3,6 @@ import {model, Schema} from "mongoose";
 const teamSchema = new Schema({
     email: {
         type: String,
-        index: true,
-        unique: true,
         required: true,
     },
     name: {

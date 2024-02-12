@@ -35,13 +35,13 @@ const teamController = {
     async createTeam(req, res) {
         const TeamBody = req.body;
         try {
-            const existedTeam = await TeamModel.findOne({email: TeamBody.email});
-
-            if (existedTeam) {
-                return res.status(400).json({
-                    'error': 'Team already exists'
-                });
-            }
+            // const existedTeam = await TeamModel.findOne({email: TeamBody.email});
+            //
+            // if (existedTeam) {
+            //     return res.status(400).json({
+            //         'error': 'Team already exists'
+            //     });
+            // }
 
             const team = await TeamModel.create({
                 ...TeamBody,

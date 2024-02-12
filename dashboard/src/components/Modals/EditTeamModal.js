@@ -23,18 +23,22 @@ export default function EditTeamModal({
     setIsError,
     setError
 }) {
+    const colors = ["success", "warning", "danger"];
     const [name, setName] = useState(team.name || '')
     const [email, setEmail] = useState(team.email || '')
     const [challenge, setChallenge] = useState(new Set([team.challenge]))
     const [establishment, setEstablishment] = useState(team.establishment || '')
     const [club, setClub] = useState(team.club || '')
+    const [teams, setTeams] = useState(team.teams)
+    console.log(teams)
     const handleSubmit = async () => {
         const { success, error } = await updateTeam(team._id, {
             name,
             email,
             challenge: challenge.currentKey,
             establishment,
-            club
+            club,
+            teams
         })
         if (success) {
             setIsSuccess(true)
@@ -46,7 +50,11 @@ export default function EditTeamModal({
         }
         onClose()
     }
-
+    const handleTeamChange = (index, fieldName, value) => {
+        const updatedTeams = [...teams];
+        updatedTeams[index][fieldName] = value;
+        setTeams(updatedTeams);
+    };
     return (
         <Modal
             isOpen={isOpen}
@@ -129,6 +137,35 @@ export default function EditTeamModal({
                                     Junior
                                 </SelectItem>
                             </Select>
+                            {teams.map((team, index) => (
+                                <div key={index}>
+
+                                    <Input
+                                        endContent={
+                                            <FaUser className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
+                                        }
+                                        type="text"
+                                        value={team.email}
+                                        onChange={e => handleTeamChange(index, 'email', e.target.value)}
+                                        placeholder="Mail"
+                                        variant="bordered"
+                                    />
+                                    <Input
+                                        type="text"
+                                        value={team.name}
+                                        onChange={e => handleTeamChange(index, 'name', e.target.value)}
+                                        placeholder="Name"
+                                        variant="bordered"
+                                    />
+                                    <Input
+                                        type="text"
+                                        value={team.phone}
+                                        onChange={e => handleTeamChange(index, 'phone', e.target.value)}
+                                        placeholder="Phone"
+                                        variant="bordered"
+                                    />
+                                </div>
+                            ))}
                         </ModalBody>
                         <ModalFooter>
                             <Button
@@ -159,9 +196,9 @@ EditTeamModal.defaultProps = {
         club: ''
     },
     isOpen: false,
-    onOpenChange: () => {},
-    onClose: () => {},
-    setIsSuccess: () => {},
-    setIsError: () => {},
-    setError: () => {}
+    onOpenChange: () => { },
+    onClose: () => { },
+    setIsSuccess: () => { },
+    setIsError: () => { },
+    setError: () => { }
 }

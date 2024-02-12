@@ -9,7 +9,7 @@ import {
     Select,
     SelectItem
 } from '@nextui-org/react'
-import { FaLock, FaUser } from 'react-icons/fa'
+import { FaLock, FaPhone, FaUser } from 'react-icons/fa'
 import { IoMail } from 'react-icons/io5'
 import { useState } from 'react'
 import { updateTeam } from '@/actions/team-actions'
@@ -102,9 +102,6 @@ export default function EditTeamModal({
                                 variant="bordered"
                             />
                             <Input
-                                endContent={
-                                    <FaLock className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
-                                }
                                 label="Club"
                                 value={club}
                                 onValueChange={setClub}
@@ -142,8 +139,9 @@ export default function EditTeamModal({
 
                                     <Input
                                         endContent={
-                                            <FaUser className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
+                                            <IoMail className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
                                         }
+
                                         type="text"
                                         value={team.email}
                                         onChange={e => handleTeamChange(index, 'email', e.target.value)}
@@ -151,6 +149,9 @@ export default function EditTeamModal({
                                         variant="bordered"
                                     />
                                     <Input
+                                        endContent={
+                                            <FaUser className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
+                                        }
                                         type="text"
                                         value={team.name}
                                         onChange={e => handleTeamChange(index, 'name', e.target.value)}
@@ -158,6 +159,9 @@ export default function EditTeamModal({
                                         variant="bordered"
                                     />
                                     <Input
+                                    endContent={
+                                        <FaPhone className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
+                                    }
                                         type="text"
                                         value={team.phone}
                                         onChange={e => handleTeamChange(index, 'phone', e.target.value)}

@@ -9,7 +9,7 @@ import {
     Select,
     SelectItem
 } from '@nextui-org/react'
-import { FaLock, FaUser } from 'react-icons/fa'
+import { FaLock, FaPhone, FaUser } from 'react-icons/fa'
 import { IoMail } from 'react-icons/io5'
 import { useState } from 'react'
 import { updateTeam } from '@/actions/team-actions'
@@ -23,18 +23,22 @@ export default function EditTeamModal({
     setIsError,
     setError
 }) {
+    const colors = ["success", "warning", "danger"];
     const [name, setName] = useState(team.name || '')
     const [email, setEmail] = useState(team.email || '')
     const [challenge, setChallenge] = useState(new Set([team.challenge]))
     const [establishment, setEstablishment] = useState(team.establishment || '')
     const [club, setClub] = useState(team.club || '')
+    const [teams, setTeams] = useState(team.teams)
+    const [scrollBehavior, setScrollBehavior] = useState("inside");
     const handleSubmit = async () => {
         const { success, error } = await updateTeam(team._id, {
             name,
             email,
             challenge: challenge.currentKey,
             establishment,
-            club
+            club,
+            teams
         })
         if (success) {
             setIsSuccess(true)
@@ -46,13 +50,19 @@ export default function EditTeamModal({
         }
         onClose()
     }
-
+    const handleTeamChange = (index, fieldName, value) => {
+        const updatedTeams = [...teams];
+        updatedTeams[index][fieldName] = value;
+        setTeams(updatedTeams);
+    };
     return (
         <Modal
             isOpen={isOpen}
             onOpenChange={onOpenChange}
             backdrop="blur"
             className="dark:text-white dark:border-white dark:bg-boxdark"
+            scrollBehavior={scrollBehavior}
+        
         >
             <ModalContent>
                 {onClose => (
@@ -94,9 +104,6 @@ export default function EditTeamModal({
                                 variant="bordered"
                             />
                             <Input
-                                endContent={
-                                    <FaLock className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
-                                }
                                 label="Club"
                                 value={club}
                                 onValueChange={setClub}
@@ -129,6 +136,42 @@ export default function EditTeamModal({
                                     Junior
                                 </SelectItem>
                             </Select>
+                            {teams.map((team, index) => (
+                                <div key={index}>
+                                    <h4>Team Member N°{index+1}</h4>
+                                    <Input className='mb-2 mt-3'
+                                        endContent={
+                                            <IoMail className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                                        }
+
+                                        type="text"
+                                        value={team.email}
+                                        onChange={e => handleTeamChange(index, 'email', e.target.value)}
+                                        placeholder="Mail"
+                                        variant="bordered"
+                                    />
+                                    <Input className='mb-2'
+                                        endContent={
+                                            <FaUser className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
+                                        }
+                                        type="text"
+                                        value={team.name}
+                                        onChange={e => handleTeamChange(index, 'name', e.target.value)}
+                                        placeholder="Name"
+                                        variant="bordered"
+                                    />
+                                    <Input className='mb-2'
+                                    endContent={
+                                        <FaPhone className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
+                                    }
+                                        type="text"
+                                        value={team.phone}
+                                        onChange={e => handleTeamChange(index, 'phone', e.target.value)}
+                                        placeholder="Phone"
+                                        variant="bordered"
+                                    />
+                                </div>
+                            ))}
                         </ModalBody>
                         <ModalFooter>
                             <Button
@@ -159,9 +202,9 @@ EditTeamModal.defaultProps = {
         club: ''
     },
     isOpen: false,
-    onOpenChange: () => {},
-    onClose: () => {},
-    setIsSuccess: () => {},
-    setIsError: () => {},
-    setError: () => {}
+    onOpenChange: () => { },
+    onClose: () => { },
+    setIsSuccess: () => { },
+    setIsError: () => { },
+    setError: () => { }
 }

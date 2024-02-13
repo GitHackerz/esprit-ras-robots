@@ -3,6 +3,7 @@ import { FaUsers } from 'react-icons/fa'
 import React from 'react'
 import { teamsByChallenge } from '@/utils'
 import { getTeams } from '@/actions/team-actions'
+import DashboardCard from '@/components/DashboardCard'
 
 export default async function Home() {
     const allTeams = await getTeams()
@@ -58,6 +59,15 @@ export default async function Home() {
                 >
                     <FaUsers className="text-primary text-xl" />
                 </CardDataStats>
+                <DashboardCard
+                    title="Autonomous Teams"
+                    total={
+                        allTeams.length > 0
+                            ? teams['Autonomous']?.length || 0
+                            : 0
+                    }
+                    rate="">
+                </DashboardCard>
             </div>
         </>
     )

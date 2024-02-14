@@ -66,6 +66,12 @@ export const emailRegistrationHtml = (team) => {
         <p>To make a pit stop for payment, follow the procedure below:</p>
         <ul>
             <li>
+                <strong>D17: </strong>53117541 "Melek Hassayoun" 
+            </li>
+            <li>
+                <strong>D17: </strong>24968615 "Rabii Zribi" 
+            </li>
+            <li>
                 <strong>Postal Transfer: </strong> "5359 4014 2011 7950" in the name of <strong>"Omaima Nasser"</strong>
             </li>
             <li>

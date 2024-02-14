@@ -2,7 +2,6 @@ import EditTeamButton from '@/components/Buttons/EditTeamButton'
 import AddTeamButton from '@/components/Buttons/AddTeamButton'
 import { DeleteButton } from '@/components/Buttons/DeleteButton'
 import { deleteTeam, getTeams } from '@/actions/team-actions'
-import { Button } from '@nextui-org/react'
 import { getUserToken } from '@/utils/serverUtils'
 import PresenceButton from '@/components/Buttons/PresenceButton'
 import PaymentButton from '@/components/Buttons/PaymentButton'
@@ -16,11 +15,7 @@ const TableTeams = async () => {
                 <h4 className="text-xl font-semibold text-black dark:text-white">
                     List Teams
                 </h4>
-                <div>
-                    {user?.isAdmin && (
-                        <AddTeamButton/>
-                    )}
-                </div>
+                <div>{user?.isAdmin && <AddTeamButton />}</div>
             </div>
             <div className="max-w-full overflow-x-auto">
                 <table className="w-full table-auto">

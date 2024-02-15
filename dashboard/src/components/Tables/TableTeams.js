@@ -9,11 +9,11 @@ import { getUserToken } from '@/utils/serverUtils';
 import PresenceButton from '@/components/Buttons/PresenceButton';
 import PaymentButton from '@/components/Buttons/PaymentButton';
 
-const TableTeams = () => {
-    const [challenge, setChallenge] = useState("ALL")
+const TableTeams = (params) => {
+    const categorie=params.categorie.cat
+    const [challenge, setChallenge] = useState(categorie)
     const [data, setData] = useState([]); 
     const [user, setUser] = useState(null);
-
     useEffect(() => {
         
         const fetchData = async () => {

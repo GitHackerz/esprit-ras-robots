@@ -16,8 +16,6 @@ export async function getTeams(challengeFilter) {
             }
         );
         let data = res.data;
-        if(challengeFilter=="All%20Terrain")
-        {challengeFilter="All Terrain"}
         if(challengeFilter!="ALL")
         {
         if (challengeFilter) {

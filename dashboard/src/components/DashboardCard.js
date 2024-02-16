@@ -5,7 +5,7 @@ import { redirect } from "next/dist/server/api-utils";
 import { useRouter } from "next/navigation";
 
 const images = ["/images/cards/autonome.png","/images/cards/allterrain.png","/images/cards/junior.png","/images/cards/fighter.png","/images/cards/all.png"]
-const cat = ["Autonomous","All Terrain","Fighter","Junior","ALL"]
+const cat = ["Autonomous","All Terrain","Junior","Fighter","ALL"]
 const DashboardCard = ({
     categorie,
     title,

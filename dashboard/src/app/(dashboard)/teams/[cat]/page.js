@@ -1,10 +1,11 @@
 import TableTeams from '@/components/Tables/TableTeams'
 
 const Page = ({params}) => {
+    console.log(params)
     return (
         <main>
             <TableTeams
-            categorie={params || "ALL"} />
+            categorie={{currentKey : decodeURI(params.cat) || "ALL"}} />
         </main>
     )
 }

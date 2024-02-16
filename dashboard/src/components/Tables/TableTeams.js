@@ -10,7 +10,7 @@ import PresenceButton from '@/components/Buttons/PresenceButton';
 import PaymentButton from '@/components/Buttons/PaymentButton';
 
 const TableTeams = (params) => {
-    const categorie=params.categorie.cat
+    const categorie=params.categorie;
     const [challenge, setChallenge] = useState(categorie)
     const [data, setData] = useState([]); 
     const [user, setUser] = useState(null);
@@ -18,6 +18,7 @@ const TableTeams = (params) => {
         
         const fetchData = async () => {
             const teamsData = await getTeams(challenge.currentKey);
+            console.log(challenge)
             setData(teamsData);
         };
 
@@ -38,7 +39,7 @@ const TableTeams = (params) => {
                     List Teams
                 </h4>
                 <div className="w-80 justify-between inline-flex" >
-                    <Select label="Team Challenge"  name="role" variant="bordered" defaultSelectedKeys={["ALL"]} onSelectionChange={setChallenge}>
+                    <Select label="Team Challenge"  name="role" variant="bordered" defaultSelectedKeys={[categorie.currentKey]} onSelectionChange={setChallenge}>
                         <SelectItem key={'ALL'} value={'ALL'} >All</SelectItem>
                         <SelectItem key={'Autonomous'} value={'Autonomous'}>Autonomous</SelectItem>
                         <SelectItem key={'All Terrain'} value={'All Terrain'}>All Terrain</SelectItem>

@@ -1,9 +1,10 @@
 import TableTeams from '@/components/Tables/TableTeams'
 
-const Page = () => {
+const Page = ({params}) => {
     return (
         <main>
-            <TableTeams />
+            <TableTeams
+            categorie={{currentKey : decodeURI(params.cat) || "ALL"}} />
         </main>
     )
 }

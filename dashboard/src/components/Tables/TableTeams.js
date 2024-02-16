@@ -1,21 +1,56 @@
-import EditTeamButton from '@/components/Buttons/EditTeamButton'
-import AddTeamButton from '@/components/Buttons/AddTeamButton'
-import { DeleteButton } from '@/components/Buttons/DeleteButton'
-import { deleteTeam, getTeams } from '@/actions/team-actions'
-import { getUserToken } from '@/utils/serverUtils'
-import PresenceButton from '@/components/Buttons/PresenceButton'
-import PaymentButton from '@/components/Buttons/PaymentButton'
+"use client"
+import React, { useState, useEffect } from 'react'; // Import React, useState, and useEffect
+import EditTeamButton from '@/components/Buttons/EditTeamButton';
+import AddTeamButton from '@/components/Buttons/AddTeamButton';
+import { DeleteButton } from '@/components/Buttons/DeleteButton';
+import { deleteTeam, getTeams } from '@/actions/team-actions';
+import { Button, Select, SelectItem } from '@nextui-org/react';
+import { getUserToken } from '@/utils/serverUtils';
+import PresenceButton from '@/components/Buttons/PresenceButton';
+import PaymentButton from '@/components/Buttons/PaymentButton';
 
-const TableTeams = async () => {
-    const data = await getTeams()
-    const { user } = await getUserToken()
+const TableTeams = (params) => {
+    const categorie=params.categorie;
+    const [challenge, setChallenge] = useState(categorie)
+    const [data, setData] = useState([]); 
+    const [user, setUser] = useState(null);
+    useEffect(() => {
+        
+        const fetchData = async () => {
+            const teamsData = await getTeams(challenge.currentKey);
+            setData(teamsData);
+        };
+
+        fetchData();
+
+        const fetchUser = async () => {
+            const { user } = await getUserToken();
+            setUser(user);
+        };
+
+        fetchUser();
+    }, [challenge]);
+
     return (
         <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
             <div className="py-6 px-4 md:px-6 xl:px-7.5 inline-flex items-center justify-between w-full">
                 <h4 className="text-xl font-semibold text-black dark:text-white">
                     List Teams
                 </h4>
-                <div>{user?.isAdmin && <AddTeamButton />}</div>
+                <div className="w-80 justify-between inline-flex" >
+                    <Select label="Team Challenge"  name="role" variant="bordered" defaultSelectedKeys={[categorie.currentKey]} onSelectionChange={setChallenge}>
+                        <SelectItem key={'ALL'} value={'ALL'} >All</SelectItem>
+                        <SelectItem key={'Autonomous'} value={'Autonomous'}>Autonomous</SelectItem>
+                        <SelectItem key={'All Terrain'} value={'All Terrain'}>All Terrain</SelectItem>
+                        <SelectItem key={'Fighter'} value={'Fighter'}>Fighter</SelectItem>
+                        <SelectItem key={'Junior'} value={'Junior'}>Junior</SelectItem>
+                    </Select>
+                </div>
+                <div>
+                    {user?.isAdmin && (
+                        <AddTeamButton />
+                    )}
+                </div>
             </div>
             <div className="max-w-full overflow-x-auto">
                 <table className="w-full table-auto">
@@ -87,7 +122,7 @@ const TableTeams = async () => {
                 </table>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default TableTeams
+export default TableTeams;

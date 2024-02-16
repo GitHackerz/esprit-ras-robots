@@ -4,9 +4,15 @@ import axios from 'axios'
 import { revalidatePath } from 'next/cache'
 import { getUserToken } from '@/utils/serverUtils'
 
-export async function getTeams(challengeFilter) {
+export async function getTeamsByChallenge(data, challengeFilter) {
+    if (challengeFilter === 'ALL') return data
+
+    return data.filter(team => team.challenge === challengeFilter)
+}
+
+export async function getTeams() {
     try {
-        const { token } = await getUserToken();
+        const { token } = await getUserToken()
         const res = await axios.get(
             `${process.env.NEXT_PUBLIC_API_URL}/teams`,
             {
@@ -14,20 +20,14 @@ export async function getTeams(challengeFilter) {
                     Authorization: `Bearer ${token}`
                 }
             }
-        );
-        let data = res.data;
-        if(challengeFilter!="ALL")
-        {
-        if (challengeFilter) {
-            data = data.filter(team => team.challenge === challengeFilter);
-        }}
-        return data;
+        )
+
+        return res.data
     } catch (err) {
-        console.error(err?.response?.data?.error);
-        return [];
+        console.error(err?.response?.data?.error)
+        return []
     }
 }
-
 
 export async function deleteTeam(prevTeams, data) {
     try {
@@ -79,15 +79,11 @@ export async function updateTeam(id, data) {
 export async function AddTeam(data) {
     try {
         const { token } = await getUserToken()
-        const res = await axios.post(
-            `${process.env.API_URL}/teams`,
-            data,
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
+        const res = await axios.post(`${process.env.API_URL}/teams`, data, {
+            headers: {
+                Authorization: `Bearer ${token}`
             }
-        )
+        })
         revalidatePath('/teams')
         return {
             success: true,

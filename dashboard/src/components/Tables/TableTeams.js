@@ -18,7 +18,6 @@ const TableTeams = (params) => {
         
         const fetchData = async () => {
             const teamsData = await getTeams(challenge.currentKey);
-            console.log(challenge)
             setData(teamsData);
         };
 

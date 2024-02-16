@@ -12,7 +12,6 @@ const DashboardCard = ({
     total,
     children
 },) => {
-    console.log(images[categorie])
     const router = useRouter()
     return (
         <Card

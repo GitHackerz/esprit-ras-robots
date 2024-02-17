@@ -9,10 +9,11 @@ import {
     Select,
     SelectItem
 } from '@nextui-org/react'
-import { FaLock, FaPhone, FaUser } from 'react-icons/fa'
+import { FaLock, FaPhone, FaPlus, FaUser } from 'react-icons/fa'
 import { IoMail } from 'react-icons/io5'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { updateTeam } from '@/actions/team-actions'
+import { GrSubtractCircle } from "react-icons/gr";
 
 export default function EditTeamModal({
     team,
@@ -23,7 +24,6 @@ export default function EditTeamModal({
     setIsError,
     setError
 }) {
-    const colors = ["success", "warning", "danger"];
     const [name, setName] = useState(team.name || '')
     const [email, setEmail] = useState(team.email || '')
     const [challenge, setChallenge] = useState(new Set([team.challenge]))
@@ -31,6 +31,7 @@ export default function EditTeamModal({
     const [club, setClub] = useState(team.club || '')
     const [teams, setTeams] = useState(team.teams)
     const [scrollBehavior, setScrollBehavior] = useState("inside");
+    const [isVisible, setisVisible] = useState(true)
     const handleSubmit = async () => {
         const { success, error } = await updateTeam(team._id, {
             name,
@@ -50,11 +51,27 @@ export default function EditTeamModal({
         }
         onClose()
     }
+    useEffect(() => {
+        if (teams.length > 2) {
+            setisVisible(false);
+        }else{
+            setisVisible(true);
+        }
+    }, [teams])
     const handleTeamChange = (index, fieldName, value) => {
         const updatedTeams = [...teams];
         updatedTeams[index][fieldName] = value;
         setTeams(updatedTeams);
     };
+    const onAdd = () => {
+        setTeams([...teams, { mail: '', name: '', phone: '' }]);
+    };
+    const onDelete = (indexToRemove) => {
+        setTeams(prevTeams => {
+            const updatedTeams = prevTeams.filter((team, index) => index !== indexToRemove);
+            return updatedTeams;
+        });
+    }
     return (
         <Modal
             isOpen={isOpen}
@@ -62,7 +79,7 @@ export default function EditTeamModal({
             backdrop="blur"
             className="dark:text-white dark:border-white dark:bg-boxdark"
             scrollBehavior={scrollBehavior}
-        
+
         >
             <ModalContent>
                 {onClose => (
@@ -138,7 +155,13 @@ export default function EditTeamModal({
                             </Select>
                             {teams.map((team, index) => (
                                 <div key={index}>
-                                    <h4>Team Member N°{index+1}</h4>
+                                    <div className='flex justify-between'>
+                                        <h1>Team Member N°{index + 1}</h1>
+                                        {index!=0 && (
+                                        <Button isIconOnly color="danger" aria-label="Like" onPress={() => onDelete(index)}>
+                                        <GrSubtractCircle />
+                                        </Button>)}
+                                    </div>
                                     <Input className='mb-2 mt-3'
                                         endContent={
                                             <IoMail className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
@@ -161,9 +184,9 @@ export default function EditTeamModal({
                                         variant="bordered"
                                     />
                                     <Input className='mb-2'
-                                    endContent={
-                                        <FaPhone className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
-                                    }
+                                        endContent={
+                                            <FaPhone className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
+                                        }
                                         type="text"
                                         value={team.phone}
                                         onChange={e => handleTeamChange(index, 'phone', e.target.value)}
@@ -172,6 +195,17 @@ export default function EditTeamModal({
                                     />
                                 </div>
                             ))}
+                            <div className="flex gap-4 items-center">
+                                {isVisible && (
+                                    <Button
+                                        isIconOnly
+                                        color="primary"
+                                        variant="faded"
+                                        className='w-full'
+                                        onPress={onAdd}>
+                                        <FaPlus />
+                                    </Button>)}
+                            </div>
                         </ModalBody>
                         <ModalFooter>
                             <Button

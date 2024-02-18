@@ -8,19 +8,15 @@ import {
     ModalFooter,
     ModalHeader,
     Select,
-    SelectItem,
-    ScrollShadow,
-    scrollShadow
+    SelectItem
 } from '@nextui-org/react'
-import React from 'react'
+import React, { useState } from 'react'
 
 import { FaLock, FaPhone, FaUser } from 'react-icons/fa'
 import { IoMail } from 'react-icons/io5'
-import { useState } from 'react'
 import { AddTeam } from '@/actions/team-actions'
 
 export default function AddTeamModal({
-    team,
     isOpen,
     onOpenChange,
     onClose,
@@ -29,14 +25,14 @@ export default function AddTeamModal({
     setError
 }) {
     const colors = ['success', 'warning', 'danger'] // Add more colors as needed
-    const [scrollBehavior, setScrollBehavior] = React.useState('inside')
+    const [scrollBehavior] = React.useState('inside')
 
     const [numberValue, setNumberValue] = useState(1)
-    const [name, setName] = useState(team.name || '')
-    const [email, setEmail] = useState(team.email || '')
-    const [challenge, setChallenge] = useState(new Set([team.challenge]))
-    const [establishment, setEstablishment] = useState(team.establishment || '')
-    const [club, setClub] = useState(team.club || '')
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [challenge, setChallenge] = useState(new Set([]))
+    const [establishment, setEstablishment] = useState('')
+    const [club, setClub] = useState('')
     const [teams, setTeams] = useState([
         {
             mail: '',
@@ -113,7 +109,16 @@ export default function AddTeamModal({
                                 placeholder="Enter Team Name"
                                 variant="bordered"
                             />
-
+                            <Input
+                                endContent={
+                                    <IoMail className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
+                                }
+                                label="Email"
+                                value={email}
+                                onValueChange={setEmail}
+                                placeholder="Enter Team Email"
+                                variant="bordered"
+                            />
                             <Input
                                 endContent={
                                     <FaLock className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
@@ -125,9 +130,6 @@ export default function AddTeamModal({
                                 variant="bordered"
                             />
                             <Input
-                                endContent={
-                                    <FaLock className="text-2xl  text-default-400 pointer-events-none flex-shrink-0" />
-                                }
                                 label="Club"
                                 value={club}
                                 onValueChange={setClub}
@@ -243,21 +245,4 @@ export default function AddTeamModal({
             </ModalContent>
         </Modal>
     )
-}
-
-//props
-AddTeamModal.defaultProps = {
-    team: {
-        name: '',
-        email: '',
-        challenge: new Set(),
-        establishment: '',
-        club: ''
-    },
-    isOpen: false,
-    onOpenChange: () => {},
-    onClose: () => {},
-    setIsSuccess: () => {},
-    setIsError: () => {},
-    setError: () => {}
 }

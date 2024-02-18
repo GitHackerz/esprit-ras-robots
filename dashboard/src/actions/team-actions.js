@@ -5,7 +5,7 @@ import { revalidatePath } from 'next/cache'
 import { getUserToken } from '@/utils/serverUtils'
 
 export async function getTeamsByChallenge(data, challengeFilter) {
-    if (challengeFilter === 'ALL') return data
+    if (challengeFilter === 'all') return data
 
     return data.filter(team => team.challenge === challengeFilter)
 }
@@ -111,7 +111,8 @@ export const changeTeamPaymentStatus = async (prev, formData) => {
                 }
             }
         )
-        revalidatePath('/teams')
+        revalidatePath('/teams/[cat]', 'page')
+
         return {
             success: true
         }
@@ -138,7 +139,7 @@ export const changeTeamPresenceStatus = async (prevState, formData) => {
                 }
             }
         )
-        revalidatePath('/teams')
+        revalidatePath('/teams/[cat]', 'page')
         return {
             success: true
         }

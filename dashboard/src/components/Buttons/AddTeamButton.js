@@ -1,9 +1,7 @@
 'use client'
-import { MdEdit } from 'react-icons/md'
 import React, { useState } from 'react'
 import { Button, useDisclosure } from '@nextui-org/react'
 import Alert from '@/components/Alert'
-import EditUserModal from '@/components/Modals/EditUserModal'
 import AddTeamModal from '../Modals/AddTeamModal'
 
 export default function EditTeamButton() {
@@ -12,7 +10,7 @@ export default function EditTeamButton() {
     const [isSuccess, setIsSuccess] = useState(false)
     const [isError, setIsError] = useState(false)
     const [error, setError] = useState()
-    const [scrollBehavior, setScrollBehavior] = React.useState("inside");
+    const [scrollBehavior] = React.useState('inside')
     return (
         <div>
             <Button

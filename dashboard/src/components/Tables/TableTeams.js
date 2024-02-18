@@ -1,5 +1,4 @@
-'use client'
-import React, { useEffect, useState } from 'react' // Import React, useState, and useEffect
+import React from 'react' // Import React, useState, and useEffect
 import EditTeamButton from '@/components/Buttons/EditTeamButton'
 import AddTeamButton from '@/components/Buttons/AddTeamButton'
 import { DeleteButton } from '@/components/Buttons/DeleteButton'
@@ -8,36 +7,16 @@ import {
     getTeams,
     getTeamsByChallenge
 } from '@/actions/team-actions'
-import { Select, SelectItem } from '@nextui-org/react'
 import { getUserToken } from '@/utils/serverUtils'
 import PresenceButton from '@/components/Buttons/PresenceButton'
 import PaymentButton from '@/components/Buttons/PaymentButton'
+import SelectTeams from '@/components/Select/SelectTeams'
 
-const TableTeams = params => {
-    const categorie = params.categorie
-    const [challenge, setChallenge] = useState(categorie)
-    const [data, setData] = useState([])
-    const [teams, setTeams] = useState([])
-    const [user, setUser] = useState(null)
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const teamsData = await getTeams()
-            setData(teamsData)
-        }
-        const fetchUser = async () => {
-            const { user } = await getUserToken()
-            setUser(user)
-        }
-
-        fetchUser().then(() => fetchData())
-    }, [])
-
-    useEffect(() => {
-        getTeamsByChallenge(data, challenge.currentKey).then(teams => {
-            setTeams(teams)
-        })
-    }, [challenge, data])
+const TableTeams = async ({ categorie }) => {
+    let challenge = categorie.currentKey
+    const teams = await getTeams()
+    const filteredTeams = await getTeamsByChallenge(teams, challenge)
+    const { user } = await getUserToken()
 
     return (
         <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
@@ -46,29 +25,7 @@ const TableTeams = params => {
                     List Teams
                 </h4>
                 <div className="w-80 justify-between inline-flex">
-                    <Select
-                        label="Team Challenge"
-                        name="role"
-                        variant="bordered"
-                        defaultSelectedKeys={[categorie.currentKey]}
-                        onSelectionChange={setChallenge}
-                    >
-                        <SelectItem key={'ALL'} value={'ALL'}>
-                            All
-                        </SelectItem>
-                        <SelectItem key={'Autonomous'} value={'Autonomous'}>
-                            Autonomous
-                        </SelectItem>
-                        <SelectItem key={'All Terrain'} value={'All Terrain'}>
-                            All Terrain
-                        </SelectItem>
-                        <SelectItem key={'Fighter'} value={'Fighter'}>
-                            Fighter
-                        </SelectItem>
-                        <SelectItem key={'Junior'} value={'Junior'}>
-                            Junior
-                        </SelectItem>
-                    </Select>
+                    <SelectTeams challenge={challenge} />
                 </div>
                 <div>{user?.isAdmin && <AddTeamButton />}</div>
             </div>
@@ -99,8 +56,8 @@ const TableTeams = params => {
                         </tr>
                     </thead>
                     <tbody>
-                        {teams &&
-                            teams.map((team, key) => (
+                        {filteredTeams &&
+                            filteredTeams.map((team, key) => (
                                 <tr key={key}>
                                     <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
                                         <h5 className="font-medium text-black dark:text-white">

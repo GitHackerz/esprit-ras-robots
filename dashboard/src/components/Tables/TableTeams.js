@@ -15,19 +15,27 @@ import SelectTeams from '@/components/Select/SelectTeams'
 const TableTeams = async ({ categorie }) => {
     let challenge = categorie.currentKey
     const teams = await getTeams()
-    const filteredTeams = await getTeamsByChallenge(teams, challenge)
+    const { filteredTeams, numberOfPaid, numberOfNotPaid } =
+        await getTeamsByChallenge(teams, challenge)
     const { user } = await getUserToken()
 
     return (
         <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
-            <div className="py-6 px-4 md:px-6 xl:px-7.5 inline-flex items-center justify-between w-full">
-                <h4 className="text-xl font-semibold text-black dark:text-white">
-                    List Teams
-                </h4>
+            <div className="py-6 px-4 md:px-6 xl:px-7.5 flex md:flex-row flex-col items-center md:justify-between md:gap-0 gap-4 w-full">
+                <div className="flex flex-row gap-4">
+                    <div className="flex flex-col items-center">
+                        <h2 className="text-xl font-semibold">
+                            <span>Paid:</span> {numberOfPaid}
+                        </h2>
+                        <h2 className="text-xl font-semibold">
+                            <span>Not Paid:</span> {numberOfNotPaid}
+                        </h2>
+                    </div>
+                </div>
                 <div className="w-80 justify-between inline-flex">
                     <SelectTeams challenge={challenge} />
                 </div>
-                <div>{user?.isAdmin && <AddTeamButton />}</div>
+                <div className="">{user?.isAdmin && <AddTeamButton />}</div>
             </div>
             <div className="max-w-full overflow-x-auto">
                 <table className="w-full table-auto">

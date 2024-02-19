@@ -4,7 +4,7 @@ import { Button, useDisclosure } from '@nextui-org/react'
 import Alert from '@/components/Alert'
 import AddTeamModal from '../Modals/AddTeamModal'
 
-export default function EditTeamButton() {
+export default function AddTeamButton() {
     const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
 
     const [isSuccess, setIsSuccess] = useState(false)
@@ -14,9 +14,8 @@ export default function EditTeamButton() {
     return (
         <div>
             <Button
-                isIconOnly
                 onPress={onOpen}
-                className="text-blue-600 hover:text-white bg-transparent hover:bg-blue-900 border xl:px-7.5 items-center w-full"
+                className="text-blue-600 hover:text-white bg-transparent hover:bg-blue-900 border items-center"
             >
                 Add Team
             </Button>

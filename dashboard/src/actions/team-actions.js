@@ -5,9 +5,17 @@ import { revalidatePath } from 'next/cache'
 import { getUserToken } from '@/utils/serverUtils'
 
 export async function getTeamsByChallenge(data, challengeFilter) {
-    if (challengeFilter === 'all') return data
-
-    return data.filter(team => team.challenge === challengeFilter)
+    if (challengeFilter === 'all')
+        return {
+            filteredTeams: data,
+            numberOfPaid: data.filter(team => team.isPaid).length,
+            numberOfNotPaid: data.filter(team => !team.isPaid).length
+        }
+    return {
+        filteredTeams: data.filter(team => team.challenge === challengeFilter),
+        numberOfPaid: data.filter(team => team.isPaid).length,
+        numberOfNotPaid: data.filter(team => !team.isPaid).length
+    }
 }
 
 export async function getTeams() {

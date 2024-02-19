@@ -13,8 +13,12 @@ export async function getTeamsByChallenge(data, challengeFilter) {
         }
     return {
         filteredTeams: data.filter(team => team.challenge === challengeFilter),
-        numberOfPaid: data.filter(team => team.isPaid).length,
-        numberOfNotPaid: data.filter(team => !team.isPaid).length
+        numberOfPaid: data.filter(
+            team => team.challenge === challengeFilter && team.isPaid
+        ).length,
+        numberOfNotPaid: data.filter(
+            team => team.challenge === challengeFilter && !team.isPaid
+        ).length
     }
 }
 

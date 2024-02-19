@@ -9,6 +9,7 @@ export default function SelectTeams({ challenge }) {
 
     return (
         <Select
+            className="md:w-50 w-full"
             defaultSelectedKeys={[challenge]}
             label="Team Challenge"
             name="role"

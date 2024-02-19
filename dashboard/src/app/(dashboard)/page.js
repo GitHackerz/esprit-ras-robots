@@ -1,5 +1,3 @@
-import CardDataStats from '@/components/CardDataStats'
-import { FaUsers } from 'react-icons/fa'
 import React from 'react'
 import { teamsByChallenge } from '@/utils'
 import { getTeams } from '@/actions/team-actions'
@@ -16,8 +14,7 @@ export default async function Home() {
                     categorie={4}
                     title="Total Participants"
                     total={allTeams.length || 0}
-                    rate="">
-                </DashboardCard>
+                ></DashboardCard>
                 <DashboardCard
                     categorie={0}
                     title="Autonomous Teams"
@@ -26,8 +23,7 @@ export default async function Home() {
                             ? teams['Autonomous']?.length || 0
                             : 0
                     }
-                    rate="">
-                </DashboardCard>
+                ></DashboardCard>
                 <DashboardCard
                     categorie={1}
                     title="All Terrain Teams"
@@ -36,24 +32,21 @@ export default async function Home() {
                             ? teams['All Terrain'].length || 0
                             : 0
                     }
-                    rate="">
-                </DashboardCard>
+                ></DashboardCard>
                 <DashboardCard
                     categorie={2}
                     title="Junior Teams"
                     total={
                         allTeams.length > 0 ? teams['Junior']?.length || 0 : 0
                     }
-                    rate="">
-                </DashboardCard>
+                ></DashboardCard>
                 <DashboardCard
                     categorie={3}
                     title="Fighter"
                     total={
                         allTeams.length > 0 ? teams['Fighter']?.length || 0 : 0
                     }
-                    rate="">
-                </DashboardCard>
+                ></DashboardCard>
             </div>
         </>
     )

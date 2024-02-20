@@ -23,9 +23,9 @@ const HeroSection = () => {
                     <Button color="secondary">Learn More</Button>
                 </Link>
 
-                <Link href={'/registration'}>
-                    <Button color="primary">Register Now</Button>
-                </Link>
+                <Button color="primary" isDisabled>
+                    Registration Closed !
+                </Button>
             </div>
             <TimeLeft />
         </section>

@@ -66,11 +66,12 @@ export function NavbarC() {
                         )
                     })}
                 </nav>
-                <Link href={'/registration'}>
-                    <Button className="md:block hidden bg-primary text-white py-1 px-4 rounded-md">
-                        Register Now{' '}
-                    </Button>
-                </Link>
+                <Button
+                    isDisabled
+                    className="md:block hidden bg-primary text-white py-1 px-4 rounded-md"
+                >
+                    Registration Closed !{' '}
+                </Button>
             </header>
             {menuOpen && (
                 <div className={`navbar-mobile ${animationClass}`}>
@@ -87,9 +88,7 @@ export function NavbarC() {
                             )
                         })}
                     </div>
-                    <Link href={'/registration'}>
-                        <Button> Register Now </Button>
-                    </Link>
+                    <Button> Registration Closed ! </Button>
                 </div>
             )}
         </>

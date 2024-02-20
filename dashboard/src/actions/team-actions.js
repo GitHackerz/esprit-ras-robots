@@ -4,6 +4,11 @@ import axios from 'axios'
 import { revalidatePath } from 'next/cache'
 import { getUserToken } from '@/utils/serverUtils'
 
+export async function getTeamsByChallenge(data, challengeFilter) {
+    if (challengeFilter === 'all') return data
+    return data.filter(team => team.challenge === challengeFilter)
+}
+
 export async function getTeams() {
     try {
         const { token } = await getUserToken()
@@ -15,6 +20,7 @@ export async function getTeams() {
                 }
             }
         )
+
         return res.data
     } catch (err) {
         console.error(err?.response?.data?.error)
@@ -72,15 +78,11 @@ export async function updateTeam(id, data) {
 export async function AddTeam(data) {
     try {
         const { token } = await getUserToken()
-        const res = await axios.post(
-            `${process.env.API_URL}/teams`,
-            data,
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
+        const res = await axios.post(`${process.env.API_URL}/teams`, data, {
+            headers: {
+                Authorization: `Bearer ${token}`
             }
-        )
+        })
         revalidatePath('/teams')
         return {
             success: true,
@@ -108,7 +110,8 @@ export const changeTeamPaymentStatus = async (prev, formData) => {
                 }
             }
         )
-        revalidatePath('/teams')
+        revalidatePath('/teams/[cat]', 'page')
+
         return {
             success: true
         }
@@ -135,7 +138,7 @@ export const changeTeamPresenceStatus = async (prevState, formData) => {
                 }
             }
         )
-        revalidatePath('/teams')
+        revalidatePath('/teams/[cat]', 'page')
         return {
             success: true
         }
